@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import UserMenu from "./UserMenu";
 
 const Header: React.FC<{}> = () => {
-  return <header>
+  return <header className="h-[80px] mx-6 flex justify-between">
     <Logo />
     <Navigation />
     <UserMenu />
