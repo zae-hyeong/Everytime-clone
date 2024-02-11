@@ -8,7 +8,10 @@ module.exports = {
       },
       backgroundImage: {
         'account': "url('/src/public/img/user-button.png')",
-        'chat': "url('/src/public/img/chat-button.png')"
+        'chat': "url('/src/public/img/chat-button.png')",
+        'my-article': "url('/src/public/img/my-article-icon.png')",
+        'my-comment': "url('/src/public/img/my-comment-article-icon.png')",
+        'my-scrap': "url('/src/public/img/my-scrap-icon.png')"
       },
       gridTemplateColumns: {
         'bulletin-board-body': "175px 1fr 300px",
