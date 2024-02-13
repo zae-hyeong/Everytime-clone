@@ -1,8 +1,8 @@
 import React from 'react';
-import UserInfoArea from './UserInfoArea';
-import RepresentativePostArea from './RepresentativePostArea';
-import BulletinBoardAdBanner from './BulletinBoardAdBanner';
-import MainBoardArea from './MainBoardArea';
+import UserInfoArea from './LeftBoard/UserInfoArea';
+import RepresentativePostArea from './RightBoard/RepresentativePostArea';
+import BulletinBoardAdBanner from './CenterBoard/BulletinBoardAdBanner';
+import MainBoardArea from './CenterBoard/MainBoardArea';
 
 const BulletinBoard:React.FC = () => {
   return (
