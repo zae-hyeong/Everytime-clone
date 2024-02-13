@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
+      colors: {
+        'main': "#F91F15"
+      },
       backgroundColor: {
         'main': "#F91F15"
       },

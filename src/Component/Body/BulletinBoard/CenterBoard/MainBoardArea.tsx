@@ -1,34 +1,41 @@
 import React from "react";
-import dummyAdBannerImg from "../../../public/img/dummuAdImg.png";
+import BoardRecentPostList from "./BoardRecentPostList";
+import PostSummery from "../../../../public/class/PostSummery";
+
+const dummyBoardTitle: string[] = [
+  "자유게시판",
+  "비밀게시판",
+  "졸업생게시판",
+  "새내기게시판",
+  "시사·이슈",
+  "장터게시판",
+  "정보게시판",
+  "취업·진로",
+  "고시 준비",
+  "로스쿨 진학 준비 게시판",
+  "공무원",
+  "7급 게시판",
+  "홍보게시판",
+  "동아리·학회",
+];
+
+const dummyBoardPosts: PostSummery[] = [
+  new PostSummery("드럼 vs 기타", "방금"),
+  new PostSummery("학자금 지원구간 질문", "방금"),
+  new PostSummery("일감호 런닝 뛸사람?", "02/13 15:49"),
+  new PostSummery("기숙사 건조기 추가시간", "02/13 13:17"),
+];
 
 const MainBoardArea: React.FC = () => {
   return (
-    <main className="bg-main">
+    <main>
       <ul className="grid gap-1.5 lg:grid-cols-2 grid-cols-1">
-        <li className="odd:bg-green-400 even:bg-pink-400 bg-origin-content">
-          4-1
-        </li>
-        <li className="odd:bg-green-400 even:bg-pink-400 bg-origin-content">
-          4-2
-        </li>
-        <li className="odd:bg-green-400 even:bg-pink-400 bg-origin-content">
-          4-3
-        </li>
-        <li className="odd:bg-green-400 even:bg-pink-400 bg-origin-content">
-          4-4
-        </li>
-        <li className="odd:bg-green-400 even:bg-pink-400 bg-origin-content">
-          4-5
-        </li>
-        <li className="odd:bg-green-400 even:bg-pink-400 bg-origin-content">
-          4-6
-        </li>
-        <li className="odd:bg-green-400 even:bg-pink-400 bg-origin-content">
-          4-7
-        </li>
-        <li className="odd:bg-green-400 even:bg-pink-400 bg-origin-content">
-          4-8
-        </li>
+        {dummyBoardTitle.map((boardTitle) => (
+          <BoardRecentPostList
+            postListTitle={boardTitle}
+            recentPosts={dummyBoardPosts}
+          />
+        ))}
       </ul>
     </main>
   );
