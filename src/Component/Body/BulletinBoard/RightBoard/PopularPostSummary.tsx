@@ -10,7 +10,7 @@ const PopularPostSummary: React.FC<{post: PopulerPostSummery}> = (props) => {
             {props.post.content}
           </p>
           <div className="flex items-center pt-1">
-            <span className="text-gray-500 font-bold text-xs mr-2">
+            <span className="text-gray-500 font-bold text-xs mr-2 overflow-hidden [display: -webkit-box;]">
               {props.post.board}
             </span>
             <div>
