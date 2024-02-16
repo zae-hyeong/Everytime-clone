@@ -1,5 +1,5 @@
 import React from "react";
-import PopulerPostSummery from "../../../../public/class/PopulerPostSummery";
+import PopulerPostSummery from "../../../../public/class/PostSummeryDetail";
 import PopularPostSummary from "./PopularPostSummary";
 
 const PopularPostList: React.FC<{

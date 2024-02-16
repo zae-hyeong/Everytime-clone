@@ -1,4 +1,4 @@
-export default class PopulerPostSummery {
+export default class PostSummeryDetail {
   title: string;
   content: string;
   board: string;
