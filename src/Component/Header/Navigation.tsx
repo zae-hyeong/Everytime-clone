@@ -3,7 +3,7 @@ import NavigationItem from "./NavigationItem";
 
 const Navigation: React.FC = () => {
   return (
-    <ul className="inline-flex grow items-center justify-center">
+    <ul className="grow items-center justify-center lg:text-lg bold leading-5 md:text-base hidden md:inline-flex">
       <NavigationItem title="게시판" />
       <NavigationItem title="시간표" />
       <NavigationItem title="강의실" />

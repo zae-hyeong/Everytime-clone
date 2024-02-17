@@ -3,9 +3,9 @@ import UserInfoAreaAdList from "./UserInfoAreaAdList";
 import UserActivityList from "./UserActivityList";
 import UserInfo from "./UserInfo";
 
-const UserInfoArea: React.FC = () => {
+const UserInfoArea: React.FC<{className: string}> = (props) => {
   return (
-    <section className="row-span-2">
+    <section className={props.className}>
       <UserInfo />
       <UserActivityList />
       <UserInfoAreaAdList />

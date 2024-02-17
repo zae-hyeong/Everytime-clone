@@ -3,7 +3,7 @@ import headerLogo from "../../public/img/main-logo.png";
 
 const Logo: React.FC = () => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center shrink-0">
       <a href="#">
         <img className="w-[40px] h-[40px] mr-2" src={headerLogo} alt="header logo" />
       </a>

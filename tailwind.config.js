@@ -20,7 +20,7 @@ module.exports = {
         'comment': "url('/src/public/img/comment-icon.png')",
       },
       gridTemplateColumns: {
-        'bulletin-board-body': "175px 1fr 300px",
+        'bulletin-board-body': "175px minmax(220px, 600px) 300px",
       },
     },
   },

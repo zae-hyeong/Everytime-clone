@@ -50,9 +50,9 @@ const dummyData = {
   ]
 };
 
-const RepresentativePostArea: React.FC = () => {
+const RepresentativePostArea: React.FC<{className: string}> = (props) => {
   return (
-    <div className="row-span-2">
+    <div className={props.className}>
       <form action="submit" className="pb-1">
         <input
           type="text"

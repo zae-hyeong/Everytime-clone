@@ -3,7 +3,7 @@ import dummyAdBannerImg from '../../../../public/img/dummuAdImg.png';
 
 const BulletinBoardAdBanner:React.FC = () => {
   return (
-    <article className='bg-green-400'>
+    <article>
         <img src={dummyAdBannerImg} alt="광고 이미지" className='w-full' />
       </article>
   )
