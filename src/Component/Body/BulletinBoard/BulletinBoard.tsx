@@ -3,6 +3,7 @@ import UserInfoArea from './LeftBoard/UserInfoArea';
 import RepresentativePostArea from './RightBoard/RepresentativePostArea';
 import BulletinBoardAdBanner from './CenterBoard/BulletinBoardAdBanner';
 import MainBoardArea from './CenterBoard/MainBoardArea';
+import Footer from './Footer';
 
 const BulletinBoard:React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const BulletinBoard:React.FC = () => {
       <BulletinBoardAdBanner />
       <RepresentativePostArea />
       <MainBoardArea />
+      <Footer />
     </main>
   )
 }
