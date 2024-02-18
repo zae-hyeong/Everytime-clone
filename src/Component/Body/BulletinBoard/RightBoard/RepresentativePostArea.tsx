@@ -57,7 +57,7 @@ const RepresentativePostArea: React.FC<{className: string}> = (props) => {
         <input
           type="text"
           placeholder="전체 게시판의 글을 검색하세요!"
-          className="w-full border-2 p-2"
+          className="hidden md:block w-full border-2 p-2"
         />
       </form>
       <PopularPostList

@@ -14,10 +14,11 @@ const dummyFooterNav: string[] = [
 
 export default function Footer(props: IFooterProps) {
   return (
-    <div className="col-span-3 text-sm text-gray-600 w-full flex flex-col justify-center items-center mb-5">
-      <ul className="flex mb-1">
+    <div className="col-span-3 text-xs text-gray-600 w-full flex flex-col justify-center items-center mb-5 mt-2
+    ">
+      <ul className="flex mb-1 flex-wrap justify-center">
         {dummyFooterNav.map((footerNavItem) => (
-          <li className="mr-2 last:mr-0">
+          <li className="mr-2.5 last:mr-0">
             <a href="#">{footerNavItem}</a>
           </li>
         ))}
