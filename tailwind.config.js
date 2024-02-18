@@ -18,6 +18,7 @@ module.exports = {
         'my-scrap': "url('/src/public/img/my-scrap-icon.png')",
         'like': "url('/src/public/img/like-icon.png')",
         'comment': "url('/src/public/img/comment-icon.png')",
+        'hamburger': "url('/src/public/img/hamburger.png')"
       },
       gridTemplateColumns: {
         'bulletin-board-body': "175px minmax(220px, 600px) 300px",
