@@ -1,9 +1,11 @@
 import React from "react";
-import PopularPostList from "./PopularPostList";
-import HotPostList from "./HotPostList";
 import PostSummeryDetail from "../../../../public/class/PostSummeryDetail";
-import RecentLectureReview from "./RecentLectureReview";
 import SubjectReviewSummery from "../../../../public/class/SubjectReviewSummery";
+import PostList from "./Layout/PostList";
+import PopularPostSummary from "./PopularPostSummary";
+import RecentLectureReviewItem from "./RecentLectureReviewItem";
+import PostSummery from "../../../../public/class/PostSummery";
+import HotPost from "./HotPost";
 
 const dummyData = {
   dummyPopulerPost: [
@@ -20,6 +22,22 @@ const dummyData = {
       "새내기게시판",
       25,
       28
+    ),
+  ],
+
+  dummyHotPosts: [
+    new PostSummery(
+      "건국대학교 2024년도 기계항공공학부 편입생을 찾습니다!!",
+      "02/15 19:02"
+    ),
+    new PostSummery("우와!", "02/15 17:52"),
+    new PostSummery(
+      "[건우건희와 함께하는 신입생 및 재학생 캠퍼스투어]",
+      "02/15 18:38"
+    ),
+    new PostSummery(
+      "💚상허생명과학대학 동아리 랩소디 부원모집💚",
+      "02/15 14:08"
     ),
   ],
 
@@ -47,10 +65,10 @@ const dummyData = {
       "조영훈",
       "조영훈 교수님 정말 제가 좋아하는 교수님이시다. 근데 이번에 학점을 너무 후하게 주신거같다.. 에이쁠은 비와 비쁠이 있을때 가치있는거입니다.. 에이쁠 가치를 낮추지 말아주세요.. 미친듯이 공부했능데 에이쁠이 너무 많"
     ),
-  ]
+  ],
 };
 
-const RepresentativePostArea: React.FC<{className: string}> = (props) => {
+const RepresentativePostArea: React.FC<{ className: string }> = (props) => {
   return (
     <div className={props.className}>
       <form action="submit" className="pb-1">
@@ -60,17 +78,28 @@ const RepresentativePostArea: React.FC<{className: string}> = (props) => {
           className="hidden md:block w-full border-2 p-2"
         />
       </form>
-      <PopularPostList
-        postsTitle={"실시간 인기 글"}
-        postContent={dummyData.dummyPopulerPost}
-      />
-      <HotPostList postListTitle={"HOT 게시물"} />
-      <PopularPostList postsTitle={"BEST 게시판"} postContent={[]} />
-      <PopularPostList
-        postsTitle={"학교 소식"}
-        postContent={[dummyData.dummySchoolNews]}
-      />
-      <RecentLectureReview postsTitle={"최근 강의평"} postContent={dummyData.dummyLectureReviews} />
+      <PostList postListTitle={"실시간 인기 글"}>
+        {dummyData.dummyPopulerPost.map((post) => (
+          <PopularPostSummary post={post} />
+        ))}
+      </PostList>
+      <PostList postListTitle={"HOT 게시물"}>
+        {dummyData.dummyHotPosts.map((post) => (
+          <HotPost boardPost={post} />
+        ))}
+      </PostList>
+      <PostList postListTitle={"BEST 게시판"}></PostList>
+      <PostList postListTitle={"학교 소식"}>
+        {[dummyData.dummySchoolNews].map((post) => (
+          <PopularPostSummary post={post} />
+        ))}
+      </PostList>
+      <PostList postListTitle={"최근 강의평"}>
+        {dummyData.dummyLectureReviews.map((review) => (
+          <RecentLectureReviewItem review={review} />
+        ))}
+      </PostList>
+      {/* <RecentLectureReview postsTitle={""} postContent={dummyData.dummyLectureReviews} /> */}
     </div>
   );
 };

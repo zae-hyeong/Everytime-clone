@@ -7,7 +7,7 @@ const BoardRecentPostList: React.FC<{
   recentPosts: PostSummery[];
 }> = (props) => {
   return (
-    <li className="bg-origin-content">
+    <li className="bg-origin-content bg-white">
       <ul>
         <li>
           <a href="#">
