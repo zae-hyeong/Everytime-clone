@@ -1,7 +1,7 @@
 import React from "react";
-import sideDummyAdBanner1 from "../../../../public/img/side-dummy-ad-1.jpg";
-import sideDummyAdBanner2 from "../../../../public/img/side-dummy-ad-2.jpg";
-import sideDummyAdBanner3 from "../../../../public/img/side-dummy-ad-3.png";
+import sideDummyAdBanner1 from "../../../../public/img/dummy/side-dummy-ad-1.jpg";
+import sideDummyAdBanner2 from "../../../../public/img/dummy/side-dummy-ad-2.jpg";
+import sideDummyAdBanner3 from "../../../../public/img/dummy/side-dummy-ad-3.png";
 
 const UserInfoAreaAdList: React.FC<{ className: string }> = (props) => {
   return (
