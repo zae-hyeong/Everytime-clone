@@ -99,7 +99,6 @@ const RepresentativePostArea: React.FC<{ className: string }> = (props) => {
           <RecentLectureReviewItem review={review} />
         ))}
       </PostList>
-      {/* <RecentLectureReview postsTitle={""} postContent={dummyData.dummyLectureReviews} /> */}
     </div>
   );
 };
