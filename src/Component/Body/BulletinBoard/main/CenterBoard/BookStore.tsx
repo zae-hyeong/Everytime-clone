@@ -1,9 +1,8 @@
-import * as React from 'react';
 import BookStoreItem from './BookStoreItem';
-import dummyBookImg1 from "../../../../public/img/dummy/dummy_book1.jpg";
-import dummyBookImg2 from "../../../../public/img/dummy/dummy_book2.jpg";
-import dummyBookImg3 from "../../../../public/img/dummy/dummy_book3.jpg";
-import dummyBookImg4 from "../../../../public/img/dummy/dummy_book4.jpg";
+import dummyBookImg1 from "public/img/dummy/dummy_book1.jpg";
+import dummyBookImg2 from "public/img/dummy/dummy_book2.jpg";
+import dummyBookImg3 from "public/img/dummy/dummy_book3.jpg";
+import dummyBookImg4 from "public/img/dummy/dummy_book4.jpg";
 
 export interface IBookStoreProps {
   className: string;

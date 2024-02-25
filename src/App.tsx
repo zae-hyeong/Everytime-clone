@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import BulletinBoard from "./Component/Body/BulletinBoard/BulletinBoard";
+import BulletinBoard from "./Component/Body/BulletinBoard/main/BulletinBoard";
 import RootLayout from "./Component/Layout/RootLayout";
 import ErrorPage from "./Component/Layout/ErrorPage";
 import TimeTable from "./Component/Body/TimeTabel/TimeTable";

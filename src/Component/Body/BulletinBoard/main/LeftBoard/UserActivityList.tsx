@@ -1,8 +1,8 @@
 import React from 'react'
 import UserActivityListItem from './UserActivityListItem'
-import articleIcon from '../../../../public/img/my-article-icon.png';
-import commentIcon from '../../../../public/img/my-comment-article-icon.png';
-import scrapIcon from '../../../../public/img/my-scrap-icon.png';
+import articleIcon from 'public/img/my-article-icon.png';
+import commentIcon from 'public/img/my-comment-article-icon.png';
+import scrapIcon from 'public/img/my-scrap-icon.png';
 
 const UserActivityList:React.FC<{className: string}> = (props) => {
   return (

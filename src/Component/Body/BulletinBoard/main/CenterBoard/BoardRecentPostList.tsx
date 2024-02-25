@@ -1,5 +1,5 @@
 import React from "react";
-import PostSummery from "../../../../public/class/PostSummery";
+import PostSummery from "public/class/PostSummery";
 import BoardRecentPost from "./BoardRecentPost";
 
 const BoardRecentPostList: React.FC<{

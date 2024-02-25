@@ -1,6 +1,6 @@
 import React from "react";
-import hamburgerIcon from "../../public/img/hamburger.png";
-import headerLogo from "../../public/img/main-logo.png";
+import hamburgerIcon from "public/img/hamburger.png";
+import headerLogo from "public/img/main-logo.png";
 import { Link } from "react-router-dom";
 
 const Logo: React.FC<{}> = (props) => {

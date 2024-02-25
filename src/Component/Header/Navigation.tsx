@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavigationItem from "../../public/class/NavigationItem";
+import NavigationItem from "public/class/NavigationItem";
 
 const dummyNavigationTitle: NavigationItem[] = [
   new NavigationItem("게시판", "nti1", ""),

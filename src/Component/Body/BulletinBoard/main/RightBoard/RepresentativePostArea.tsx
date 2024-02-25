@@ -1,10 +1,10 @@
 import React from "react";
-import PostSummeryDetail from "../../../../public/class/PostSummeryDetail";
-import SubjectReviewSummery from "../../../../public/class/SubjectReviewSummery";
+import PostSummeryDetail from "public/class/PostSummeryDetail";
+import SubjectReviewSummery from "public/class/SubjectReviewSummery";
+import PostSummery from "public/class/PostSummery";
 import PostList from "./Layout/PostList";
 import PopularPostSummary from "./PopularPostSummary";
 import RecentLectureReviewItem from "./RecentLectureReviewItem";
-import PostSummery from "../../../../public/class/PostSummery";
 import HotPost from "./HotPost";
 
 const dummyData = {

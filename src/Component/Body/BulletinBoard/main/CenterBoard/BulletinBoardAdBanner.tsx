@@ -1,5 +1,5 @@
 import React from 'react'
-import dummyAdBannerImg from '../../../../public/img/dummy/dummyAdImg.png';
+import dummyAdBannerImg from 'public/img/dummy/dummyAdImg.png';
 
 const BulletinBoardAdBanner:React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import PostSummery from "../../../../public/class/PostSummery";
+import PostSummery from "public/class/PostSummery";
 
-const BoardRecentPost: React.FC<{ boardPost: PostSummery }> = (props) => {
+const HotPost: React.FC<{ boardPost: PostSummery }> = (props) => {
   return (
     <li className="p-2 text-sm border border-t-0 hover:bg-gray-100">
       <a href="#" className="flex items-center justify-between">
@@ -16,4 +16,4 @@ const BoardRecentPost: React.FC<{ boardPost: PostSummery }> = (props) => {
   );
 };
 
-export default BoardRecentPost;
+export default HotPost;

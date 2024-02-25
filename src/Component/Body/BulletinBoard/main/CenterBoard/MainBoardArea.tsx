@@ -1,6 +1,6 @@
 import React from "react";
 import BoardRecentPostList from "./BoardRecentPostList";
-import PostSummery from "../../../../public/class/PostSummery";
+import PostSummery from "public/class/PostSummery";
 
 const dummyBoardTitle: string[] = [
   "자유게시판",

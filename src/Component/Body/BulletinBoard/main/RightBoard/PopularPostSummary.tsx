@@ -1,5 +1,5 @@
 import React from 'react'
-import PopulerPostSummery from '../../../../public/class/PostSummeryDetail'
+import PopulerPostSummery from 'public/class/PostSummeryDetail'
 
 const PopularPostSummary: React.FC<{post: PopulerPostSummery}> = (props) => {
   return (

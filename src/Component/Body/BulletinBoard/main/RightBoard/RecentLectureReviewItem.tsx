@@ -1,6 +1,6 @@
 import React from 'react'
-import starRating from "../../../../public/img/subject-rating-details-star-on.png";
-import SubjectReviewSummery from '../../../../public/class/SubjectReviewSummery'
+import starRating from "public/img/subject-rating-details-star-on.png";
+import SubjectReviewSummery from 'public/class/SubjectReviewSummery'
 
 const RecentLectureReviewItem: React.FC<{review: SubjectReviewSummery}> = (props) => {
   return (
