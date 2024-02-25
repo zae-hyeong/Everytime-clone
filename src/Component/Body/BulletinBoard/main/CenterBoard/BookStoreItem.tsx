@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 export interface IBookStoreItemProps {
   bookTitle: string;
@@ -9,7 +10,7 @@ export interface IBookStoreItemProps {
 export default function BookStoreItem(props: IBookStoreItemProps) {
   return (
     <div className="hover:bg-gray-100 border">
-      <a href="#">
+      <Link to="#">
         <img
           src={props.bookImage}
           alt="book store Item"
@@ -17,7 +18,7 @@ export default function BookStoreItem(props: IBookStoreItemProps) {
         />
         <div className="text-sm p-2 pb-3">{props.bookTitle}</div>
         <div className="text-sm text-main px-2 pb-2">{props.bookPrice}</div>
-      </a>
+      </Link>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import starRating from "public/img/subject-rating-details-star-on.png";
 import SubjectReviewSummery from 'public/class/SubjectReviewSummery'
 
 const RecentLectureReviewItem: React.FC<{review: SubjectReviewSummery}> = (props) => {
   return (
     <li className="border px-2 py-1 hover:bg-white">
-          <a href="#">
+          <Link to="#">
             <img
               src={starRating}
               alt="subject rating details star"
@@ -19,7 +20,7 @@ const RecentLectureReviewItem: React.FC<{review: SubjectReviewSummery}> = (props
                 {props.review.content}
               </span>
             </div>
-          </a>
+          </Link>
         </li>
   )
 }

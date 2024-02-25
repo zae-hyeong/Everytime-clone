@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 export interface IFooterProps {}
 
@@ -19,7 +20,7 @@ export default function Footer(props: IFooterProps) {
       <ul className="flex mb-1 flex-wrap justify-center">
         {dummyFooterNav.map((footerNavItem) => (
           <li className="mr-2.5 last:mr-0">
-            <a href="#">{footerNavItem}</a>
+            <Link to="#">{footerNavItem}</Link>
           </li>
         ))}
       </ul>
