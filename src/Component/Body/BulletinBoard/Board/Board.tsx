@@ -3,7 +3,6 @@ import BoardListItem from "./BoardListItem";
 import Post from "public/class/Post";
 import testPostImg from "public/img/testImg.jpg";
 import PostForm from "./PostForm";
-import Footer from "../main/Footer";
 import BottomMenu from "./BottomMenu";
 
 export interface IBoardProps {}
@@ -143,7 +142,6 @@ export function Board(props: IBoardProps) {
         ))}
       </ul>
       <BottomMenu />
-      <Footer />
     </main>
   );
 }
