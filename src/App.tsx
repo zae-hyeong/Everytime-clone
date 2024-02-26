@@ -8,6 +8,7 @@ import CampusPick from "./Component/Body/CampusPick/CampusPick";
 import GradeCalculator from "./Component/Body/Friends/GradeCalculator/GradeCalculator";
 import Friends from "./Component/Body/Friends/Friends";
 import BookStore from "./Component/Body/BookStore/BookStore";
+import { Board } from "Component/Body/BulletinBoard/Board/Board";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <BulletinBoard /> },
+      // { path: "/", element: <BulletinBoard /> },
+      { path: "/", element: <Board /> },
       { path: "/TimeTable", element: <TimeTable /> },
       { path: "/Lectures", element: <Lectures /> },
       { path: "/GradeCalculator", element: <GradeCalculator /> },

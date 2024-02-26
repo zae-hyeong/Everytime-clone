@@ -9,9 +9,9 @@ export default function RootLayout(props: IRootLayoutProps) {
   return (
     <>
       <Header />
-      <body>
+      <main>
         <Outlet />
-      </body>
+      </main>
     </>
   );
 }
