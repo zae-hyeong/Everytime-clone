@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 
 const BoardRecentPostList: React.FC<{
   postListTitle: string;
+  boardId: string;
   recentPosts: PostSummery[];
 }> = (props) => {
   return (
     <li className="bg-origin-content bg-white">
       <ul>
         <li>
-          <Link to="#">
+          <Link to={`/Board/${props.boardId}`}>
             <h3 className="text-main font-bold p-2 border">
               {props.postListTitle}
             </h3>

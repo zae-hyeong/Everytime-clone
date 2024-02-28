@@ -20,9 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <BoardLayout />,
+        
         children: [
           { path: "/", element: <BulletinBoard /> },
-          { path: "/Board", element: <Board /> }
+          { path: "/Board/:boardId", element: <Board boardTitle={"자유게시판"} /> },
         ]
       },
       { path: "/TimeTable", element: <TimeTable /> },

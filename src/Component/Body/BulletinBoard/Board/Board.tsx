@@ -5,7 +5,9 @@ import testPostImg from "public/img/testImg.jpg";
 import PostForm from "./PostForm";
 import BottomMenu from "./BottomMenu";
 
-export interface IBoardProps {}
+export interface IBoardProps {
+  boardTitle: string;
+}
 
 const dummyPosts: Post[] = [
   new Post(
@@ -134,7 +136,7 @@ const dummyPosts: Post[] = [
 export function Board(props: IBoardProps) {
   return (
     <main className="p-4 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold border p-3">자유게시판</h1>
+      <h1 className="text-2xl font-bold border p-3">{props.boardTitle}</h1>
       <PostForm />
       <ul>
         {dummyPosts.map((post) => (
