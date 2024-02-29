@@ -8,8 +8,8 @@ import CampusPick from "./Component/Body/CampusPick/CampusPick";
 import GradeCalculator from "./Component/Body/Friends/GradeCalculator/GradeCalculator";
 import Friends from "./Component/Body/Friends/Friends";
 import BookStore from "./Component/Body/BookStore/BookStore";
-import { Board } from "Component/Body/BulletinBoard/Board/Board";
-import BoardLayout from "Component/Layout/BoardLayout";
+import { Board } from "./Component/Body/BulletinBoard/Board/Board";
+import BoardLayout from "./Component/Layout/BoardLayout";
 
 const router = createBrowserRouter([
   {

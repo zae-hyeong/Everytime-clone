@@ -4,6 +4,7 @@ import Post from "public/class/Post";
 import testPostImg from "public/img/testImg.jpg";
 import PostForm from "./PostForm";
 import BottomMenu from "./BottomMenu";
+import RepresentativePostArea from "../main/RightBoard/RepresentativePostArea";
 
 export interface IBoardProps {
   boardTitle: string;
@@ -135,15 +136,18 @@ const dummyPosts: Post[] = [
 
 export function Board(props: IBoardProps) {
   return (
-    <main className="p-4 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold border p-3">{props.boardTitle}</h1>
-      <PostForm />
-      <ul>
-        {dummyPosts.map((post) => (
-          <BoardListItem post={post} />
-        ))}
-      </ul>
-      <BottomMenu />
+    <main className=" flex w-full items-start justify-center md:p-4">
+      <div className="w-full max-w-3xl lg:flex-grow lg:mr-6">
+        <h1 className="text-2xl font-bold border px-3 py-4">{props.boardTitle}</h1>
+        <PostForm />
+        <ul>
+          {dummyPosts.map((post) => (
+            <BoardListItem post={post} />
+          ))}
+        </ul>
+        <BottomMenu />
+      </div>
+      <RepresentativePostArea className={"hidden lg:block lg:max-w-xs"}/>
     </main>
   );
 }
