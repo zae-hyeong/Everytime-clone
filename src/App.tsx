@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         
         children: [
           { path: "/", element: <BulletinBoard /> },
-          { path: "/Board/:boardId", element: <Board boardTitle={"자유게시판"} /> },
+          { path: "/Board/:boardId", element: <Board /> },
         ]
       },
       { path: "/TimeTable", element: <TimeTable /> },
