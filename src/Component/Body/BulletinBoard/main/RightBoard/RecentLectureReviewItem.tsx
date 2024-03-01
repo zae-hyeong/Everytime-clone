@@ -16,7 +16,7 @@ const RecentLectureReviewItem: React.FC<{review: SubjectReviewSummery}> = (props
               {props.review.subjectTitle} : {props.review.professor}
             </h4>
             <div className="flex items-center pt-1">
-              <span className="text-gray-500 text-xs mr-2 overflow-hidden [display: -webkit-box;]">
+              <span className="text-gray-500 text-xs mr-2 overflow-ellipsis line-clamp-2">
                 {props.review.content}
               </span>
             </div>

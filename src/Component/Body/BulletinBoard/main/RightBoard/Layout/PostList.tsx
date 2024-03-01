@@ -8,7 +8,7 @@ interface IPostListProps {
 
 const PostList: React.FC<IPostListProps> = (props) => {
   return (
-    <ul className="border mb-1 bg-white md:bg-gray-100">
+    <ul className="border mb-1 bg-white md:bg-gray-50">
       <li>
         <Link to="#">
           <h3 className="text-sub p-2 font-bold border border-t-0">

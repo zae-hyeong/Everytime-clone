@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HotPost: React.FC<{ boardPost: PostSummery }> = (props) => {
   return (
-    <li className="p-2 text-sm border border-t-0 hover:bg-gray-100">
+    <li className="p-2 text-sm border border-t-0 hover:bg-white">
       <Link to="#" className="flex items-center justify-between">
         <span className="grow-1 block whitespace-nowrap overflow-hidden text-ellipsis">
           {props.boardPost.postTitle}
