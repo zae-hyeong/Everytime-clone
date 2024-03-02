@@ -1,9 +1,14 @@
 import React from "react";
-import UserProfileDetailButton from "./UserProfileDetailButton";
+import UserProfileDetailButton from "./UserInfoAreaAsset/UserProfileDetailButton";
 
-const UserInfo: React.FC<{className: string}> = (props) => {
+const UserInfo: React.FC<{ className: string }> = (props) => {
   return (
-    <div className={props.className + " bg-gray-100 h-[210px] flex flex-col items-center border border-gray-300 p-4"}>
+    <div
+      className={
+        props.className +
+        " bg-gray-100 h-[210px] flex flex-col items-center border border-gray-300 p-4"
+      }
+    >
       <img
         src={process.env.PUBLIC_URL + "/img/user-default-img.png"}
         alt="user profile"

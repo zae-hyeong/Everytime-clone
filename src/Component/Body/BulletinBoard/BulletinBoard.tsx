@@ -1,10 +1,9 @@
 import React from "react";
-import UserInfoArea from "./LeftBoard/UserInfoArea";
-import RepresentativePostArea from "./RightBoard/RepresentativePostArea";
-import BulletinBoardAdBanner from "./CenterBoard/BulletinBoardAdBanner";
-import MainBoardArea from "./CenterBoard/MainBoardArea";
-import Footer from "./Footer";
-import BookStore from "./CenterBoard/BookStore";
+import UserInfoArea from "./Home/UserInfoArea/UserInfoArea";
+import BulletinBoardAdBanner from "./Home/MainBoardsArea/BulletinBoardAdBanner";
+import RepresentativePostArea from "./Home/RepresentativePostArea/RepresentativePostArea";
+import BookStore from "./Home/MainBoardsArea/BookStore";
+import MainBoardArea from "./Home/MainBoardsArea/MainBoardsArea";
 
 const BulletinBoard: React.FC = () => {
   return (
@@ -14,7 +13,6 @@ const BulletinBoard: React.FC = () => {
       <RepresentativePostArea className={"row-span-2"} />
       <MainBoardArea />
       <BookStore className={"col-span-3 lg:col-span-1"} />
-      <Footer />
     </main>
   );
 };
