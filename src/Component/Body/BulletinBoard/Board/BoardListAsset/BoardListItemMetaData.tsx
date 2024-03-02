@@ -1,3 +1,5 @@
+import NumOfComments from "Component/PublicAsset/NumOfComments";
+import NumOfLikes from "Component/PublicAsset/NumOfLikes";
 import * as React from "react";
 
 export interface IBoardListItemMetaDataProps {
@@ -13,18 +15,14 @@ export default function BoardListItemMetaData(
   return (
     <div className="text-xs text-gray-400 mt-1 flex">
       {props.numOfComments || props.numOfLikes ? (
-        <div className="after:content-['|'] after:p-1">
+        <div className="after:content-['|'] after:px-1 flex items-center">
           {props.numOfLikes ? (
-            <span className="text-main pl-5 bg-[url('public/img/like-icon.png')] bg-no-repeat bg-origin-padding bg-[length:15px_12px] mr-2">
-              {props.numOfLikes}
-            </span>
+            <NumOfLikes numOfLikes={props.numOfLikes} />
           ) : (
             <></>
           )}
           {props.numOfComments ? (
-            <span className="text-blue-500 pl-4 bg-[url('public/img/comment-icon.png')] bg-no-repeat bg-origin-padding bg-[length:12px_12px]">
-              {props.numOfComments}
-            </span>
+            <NumOfComments numOfComments={props.numOfComments}/>
           ) : (
             <></>
           )}
