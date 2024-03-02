@@ -18,7 +18,12 @@ module.exports = {
         'my-scrap': "url('/src/public/img/my-scrap-icon.png')",
         'like': "url('/src/public/img/like-icon.png')",
         'comment': "url('/src/public/img/comment-icon.png')",
-        'hamburger': "url('/src/public/img/hamburger.png')"
+        'hamburger': "url('/src/public/img/hamburger.png')",
+        'write': "url('/src/public/img/write-bg.png')",
+        'write-submit': "url('/src/public/img/write-submit.png')",
+        'write-attach': "url('/src/public/img/write-attach.png')",
+        'write-hashtag': "url('/src/public/img/write-hashtag.png')",
+        'cancel': "url('/src/public/img/cancel.png')",
       },
       gridTemplateColumns: {
         'bulletin-board-body': "175px minmax(220px, 600px) 300px",

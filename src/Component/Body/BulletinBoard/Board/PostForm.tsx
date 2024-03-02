@@ -1,9 +1,11 @@
 import * as React from "react";
+import FormBottomMenu from "./asset/FormBottomMenu";
+import FormTitleArea from "./asset/FormTitleArea";
 
 export interface IPostFormProps {}
 
 const inputPlaceholde_deactive = `새 글을 작성해주세요!`;
-const inputPlaceholde_active = `에브리타임은 누구나 기분 좋게 참여할 수 있는 커뮤니티를 만들기 위해 커뮤니티 이용규칙을 제정하여 운영하고 있습니다. 위반 시 게시물이 삭제되고 서비스 이용이 일정 기간 제한될 수 있습니다. 
+const inputPlaceholde_active = `에브리타임은 누구나 기분 좋게 참여할 수 있는 커뮤니티를 만들기 위해 커뮤니티 이용규칙을 제정하여 운영하고 있습니다. 위반 시 게시물이 삭제되고 서비스 이용이 일정 기간 제한될 수 있습니다.
 
 아래는 이 게시판에 해당하는 핵심 내용에 대한 요약 사항이며, 게시물 작성 전 커뮤니티 이용규칙 전문을 반드시 확인하시기 바랍니다. 
 
@@ -36,16 +38,31 @@ export default function PostForm(props: IPostFormProps) {
     setIsInputActive(true);
   };
 
+  const cancelWriteHandler: React.MouseEventHandler = () => {
+    setIsInputActive(false);
+  };
+
   return (
-    <form action="submit" className="w-full">
-      <input
-        type="text"
-        onFocus={inputFocusHandler}
-        placeholder={
-          isInputActive ? inputPlaceholde_active : inputPlaceholde_deactive
-        }
-        className="w-full text-sm border-2 border-gray-300 p-3 my-1 bg-gray-100"
-      />
+    <form action="submit" className="w-full border-2 border-gray-300 p-0 my-1">
+      {isInputActive ? (
+        <>
+          <FormTitleArea onCancelClicked={cancelWriteHandler} />
+          <div className="w-full p-3 h-80">
+            <textarea
+              placeholder={inputPlaceholde_active}
+              className="w-full h-full p-3 text-sm outline-none"
+            ></textarea>
+          </div>
+          <FormBottomMenu />
+        </>
+      ) : (
+        <input
+          type="text"
+          onFocus={inputFocusHandler}
+          placeholder={inputPlaceholde_deactive}
+          className="w-full text-sm border-gray-300 p-3 bg-gray-100 bg-write bg-no-repeat bg-contain bg-right"
+        />
+      )}
     </form>
   );
 }
