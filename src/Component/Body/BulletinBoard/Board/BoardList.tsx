@@ -133,7 +133,7 @@ export default function BoardList(props: IBoardListProps) {
   return (
     <ul>
       {dummyPosts.map((post) => (
-        <BoardListItem post={post} />
+        <BoardListItem key={post.postId} post={post} />
       ))}
     </ul>
   );
