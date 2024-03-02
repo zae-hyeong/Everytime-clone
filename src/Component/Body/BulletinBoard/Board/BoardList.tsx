@@ -130,6 +130,7 @@ const dummyPosts: Post[] = [
 ];
 
 export default function BoardList(props: IBoardListProps) {
+
   return (
     <ul>
       {dummyPosts.map((post) => (

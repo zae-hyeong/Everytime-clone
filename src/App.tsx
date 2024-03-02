@@ -10,6 +10,7 @@ import Friends from "./Component/Body/Friends/Friends";
 import BookStore from "./Component/Body/BookStore/BookStore";
 import { Board } from "./Component/Body/BulletinBoard/Board/Board";
 import BoardLayout from "./Component/Layout/BoardLayout";
+import Post from "Component/Body/BulletinBoard/Post/Post";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +21,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <BoardLayout />,
-        
+
         children: [
-          { path: "/", element: <BulletinBoard /> },
-          { path: "/Board/:boardId", element: <Board /> },
-        ]
+          { path: "/", element: <BulletinBoard /> }, 
+          {
+            path: "/Board/:boardId",
+            element: <BoardLayout />, //TODO: make new Layout
+            children: [
+              { path: ":postId", element: <Board /> },
+              { path: ":postId", element: <Post /> },
+            ],
+          },
+        ],
       },
       { path: "/TimeTable", element: <TimeTable /> },
       { path: "/Lectures", element: <Lectures /> },

@@ -10,7 +10,7 @@ export interface IBoardListItemProps {
 export default function BoardListItem(props: IBoardListItemProps) {
   return (
     <li key={props.post.postId} className="border border-t-0 first:border hover:bg-gray-50 p-4">
-      <Link to={`/${props.post.postId}`} className="flex">
+      <Link to={`${props.post.postId}`} className="flex">
         <div className="flex-grow ">
           <h3 className="font-bold">{props.post.title}</h3>
           <p className="text-sm line-clamp-2 text-ellipsis overflow-hidden">
