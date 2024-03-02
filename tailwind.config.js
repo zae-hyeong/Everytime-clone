@@ -24,6 +24,7 @@ module.exports = {
         'write-attach': "url('/src/public/img/write-attach.png')",
         'write-hashtag': "url('/src/public/img/write-hashtag.png')",
         'cancel': "url('/src/public/img/cancel.png')",
+        'search': "url('/src/public/img/search.png'",
       },
       gridTemplateColumns: {
         'bulletin-board-body': "175px minmax(220px, 600px) 300px",

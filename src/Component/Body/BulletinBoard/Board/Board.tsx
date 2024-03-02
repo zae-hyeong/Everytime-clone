@@ -1,12 +1,10 @@
 import * as React from "react";
-import BoardListItem from "./BoardListItem";
-import Post from "public/class/Post";
-import testPostImg from "public/img/testImg.jpg";
 import PostForm from "./PostForm";
 import BottomMenu from "./BottomMenu";
 import RepresentativePostArea from "../main/RightBoard/RepresentativePostArea";
 import BoardData from "public/class/Board";
 import { useParams } from "react-router-dom";
+import BoardList from "./BoardList";
 
 export interface IBoardProps {}
 
@@ -27,130 +25,6 @@ const dummyBoardTitle: BoardData[] = [
   new BoardData("동아리·학회", "clubBoard"),
 ];
 
-const dummyPosts: Post[] = [
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    1,
-    0,
-    "3분 전",
-    "익명",
-    [testPostImg],
-    "자유게시판",
-    "p1"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    0,
-    2,
-    "3분 전",
-    "익명",
-    [],
-    "자유게시판",
-    "p2"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    8,
-    9,
-    "3분 전",
-    "익명",
-    [],
-    "자유게시판",
-    "p3"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    46,
-    123,
-    "3분 전",
-    "익명",
-    [testPostImg],
-    "자유게시판",
-    "p4"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    0,
-    0,
-    "3분 전",
-    "익명",
-    [],
-    "자유게시판",
-    "p5"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    0,
-    2,
-    "3분 전",
-    "익명",
-    [],
-    "자유게시판",
-    "p6"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    0,
-    2,
-    "3분 전",
-    "익명",
-    [],
-    "자유게시판",
-    "p7"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    3,
-    5,
-    "3분 전",
-    "익명",
-    [testPostImg],
-    "자유게시판",
-    "p8"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    3,
-    2,
-    "3분 전",
-    "익명",
-    [],
-    "자유게시판",
-    "p9"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    3,
-    2,
-    "3분 전",
-    "익명",
-    [],
-    "자유게시판",
-    "p10"
-  ),
-  new Post(
-    "ㅋㅋㄹㅃㅃ",
-    "ㅋㅋㄹ삥빵뽕삥빵뽕",
-    3,
-    2,
-    "3분 전",
-    "익명",
-    [testPostImg],
-    "자유게시판",
-    "p11"
-  ),
-];
-
 export function Board(props: IBoardProps) {
   const { boardId } = useParams<{ boardId: string }>();
   let currentBoard = dummyBoardTitle.find((board) => board.boardId === boardId);
@@ -162,11 +36,7 @@ export function Board(props: IBoardProps) {
           {currentBoard?.title}
         </h1>
         <PostForm />
-        <ul>
-          {dummyPosts.map((post) => (
-            <BoardListItem post={post} />
-          ))}
-        </ul>
+        <BoardList />
         <BottomMenu />
       </div>
       <RepresentativePostArea className={"hidden lg:block lg:max-w-xs"} />

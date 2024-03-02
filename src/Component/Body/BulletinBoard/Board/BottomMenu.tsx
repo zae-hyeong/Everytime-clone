@@ -15,10 +15,10 @@ export default function BottomMenu(props: IBottomMenuProps) {
         <input
           type="text"
           placeholder="검색어를 입력하세요."
-          className="bg-[url('public/img/search.png')] bg-[length:20px_20px] pr-[24px] bg-no-repeat bg-right text-sm"
+          className="bg-search bg-[length:20px_20px] pr-[24px] bg-no-repeat bg-right text-sm"
         />
       </form>
-      <button className="border-main border text-main px-3 py-1 rounded">{`다음 >`}</button>
+      <button className="border-main border font-bold text-main px-3 py-1 rounded">{`다음 >`}</button>
     </div>
   );
 }

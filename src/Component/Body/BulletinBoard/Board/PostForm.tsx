@@ -1,6 +1,6 @@
 import * as React from "react";
-import FormBottomMenu from "./asset/FormBottomMenu";
-import FormTitleArea from "./asset/FormTitleArea";
+import FormBottomMenu from "./PostFormAsset/FormBottomMenu";
+import FormTitleArea from "./PostFormAsset/FormTitleArea";
 
 export interface IPostFormProps {}
 
