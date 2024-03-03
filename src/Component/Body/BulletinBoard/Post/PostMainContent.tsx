@@ -1,10 +1,10 @@
 import * as React from "react";
-import PostUserProfile from "./PostMainContentAsset/PostUserProfile";
+import PostUserProfile from "./PostAsset/PostUserProfile";
 import { Link } from "react-router-dom";
 import NumOfComments from "Component/PublicAsset/NumOfComments";
 import NumOfLikes from "Component/PublicAsset/NumOfLikes";
 import NumOfScraps from "Component/PublicAsset/NumOfScrap";
-import PostReactionButton from "./PostMainContentAsset/PostReactionButton";
+import PostReactionButton from "./PostAsset/PostReactionButton";
 
 export interface IPostMainContentProps {}
 

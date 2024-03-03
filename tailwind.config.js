@@ -27,6 +27,7 @@ module.exports = {
         'search': "url('/src/public/img/search.png'",
         'btn-scrap': "url('/src/public/img/buttons-scrap.png')",
         'btn-like': "url('/src/public/img/buttons-like.png')",
+        'list': "url('/src/public/img/list.png')",
       },
       gridTemplateColumns: {
         'bulletin-board-body': "175px minmax(220px, 600px) 300px",
