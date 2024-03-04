@@ -24,5 +24,5 @@ const commentSlice = createSlice({
   },
 });
 
-export const { appendComment } = commentSlice.actions;
+export const { appendComment, deleteComment } = commentSlice.actions;
 export default commentSlice.reducer;
