@@ -9,7 +9,7 @@ export interface ICommentItemProps {
 
 export default function CommentItem (props: ICommentItemProps) {
   return (
-    <li key={props.comment.commentId} className='p-3 border-b'>
+    <li key={props.comment.commentId} className='p-3 border-b first:border-t-0'>
       <div className='flex justify-between items-center mb-2'>
         <div className='flex items-center text-xs font-bold'>
           <img src={anonymousUserProfileImg} alt="user profile" className='w-5 h-5 rounded mr-1'/>
@@ -24,7 +24,7 @@ export default function CommentItem (props: ICommentItemProps) {
       </div>
       <p>{props.comment.content}</p>
       <div className='flex items-center mt-2'>
-        <span className='text-xs font-gray-504'>{props.comment.uploadTime}</span>
+        <span className='text-xs text-gray-400'>{props.comment.uploadTime}</span>
         {props.comment.numOfLikes ? <NumOfLikes numOfLikes={props.comment.numOfLikes} className='ml-2' /> : <></>}
       </div>
     </li>
