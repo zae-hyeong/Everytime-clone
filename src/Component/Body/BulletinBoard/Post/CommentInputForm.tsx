@@ -27,8 +27,6 @@ export default function CommentInputForm(props: ICommentInputFormProps) {
         type="text"
         placeholder="댓글을 입력하세요."
         className="h-full flex-grow p-2 bg-gray-100 text-sm"
-        // onChange={commentInputHandler}
-        // value={commentContent}
         ref={commentInputRef}
       />
       <div className="flex items-center">

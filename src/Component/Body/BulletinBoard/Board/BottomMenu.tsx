@@ -1,8 +1,19 @@
+import { nextPage } from "Component/Redux/boardSlice";
 import * as React from "react";
+import { useDispatch } from "react-redux";
 
 export interface IBottomMenuProps {}
 
 export default function BottomMenu(props: IBottomMenuProps) {
+
+  const dispatch = useDispatch();
+  
+  const nextButtonHandler:React.MouseEventHandler = (e) => {
+    e.preventDefault();
+
+    dispatch(nextPage());
+  }
+
   return (
     <div className="flex justify-between rounded mt-1 mb-3">
       <form action="submit" className="border border-gray-400 rounded p-2">
@@ -18,7 +29,7 @@ export default function BottomMenu(props: IBottomMenuProps) {
           className="bg-search bg-[length:20px_20px] pr-[24px] bg-no-repeat bg-right text-sm"
         />
       </form>
-      <button className="border-main border font-bold text-main px-3 py-1 rounded">{`다음 >`}</button>
+      <button onClick={nextButtonHandler} className="border-main border font-bold text-main px-3 py-1 rounded">{`다음 >`}</button>
     </div>
   );
 }
