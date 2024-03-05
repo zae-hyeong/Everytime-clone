@@ -1,18 +1,23 @@
-import { nextPage } from "Component/Redux/boardSlice";
+import { RootState } from "Component/Redux/Store";
+import { nextPage, prevPage } from "Component/Redux/boardSlice";
 import * as React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export interface IBottomMenuProps {}
 
 export default function BottomMenu(props: IBottomMenuProps) {
+  const page = useSelector((state: RootState) => state.board.boardPage);
 
   const dispatch = useDispatch();
-  
-  const nextButtonHandler:React.MouseEventHandler = (e) => {
-    e.preventDefault();
 
+  const nextButtonHandler: React.MouseEventHandler = (e) => {
+    e.preventDefault();
     dispatch(nextPage());
-  }
+  };
+  const prevButtonHandler: React.MouseEventHandler = (e) => {
+    e.preventDefault();
+    dispatch(prevPage());
+  };
 
   return (
     <div className="flex justify-between rounded mt-1 mb-3">
@@ -29,7 +34,16 @@ export default function BottomMenu(props: IBottomMenuProps) {
           className="bg-search bg-[length:20px_20px] pr-[24px] bg-no-repeat bg-right text-sm"
         />
       </form>
-      <button onClick={nextButtonHandler} className="border-main border font-bold text-main px-3 py-1 rounded">{`다음 >`}</button>
+      <div className="flex">
+        <button
+          onClick={prevButtonHandler}
+          className={page <= 0 ? "hidden" : "border-main border text-sm font-bold text-main px-3 py-1 rounded mr-2"}
+        >{`< 이전`}</button>
+        <button
+          onClick={nextButtonHandler}
+          className="border-main border text-sm font-bold text-main px-3 py-1 rounded"
+        >{`다음 >`}</button>
+      </div>
     </div>
   );
 }

@@ -15,8 +15,11 @@ const boardSlice = createSlice({
     nextPage: (state) => {
       state.boardPage += 1;
     },
+    prevPage: (state) => {
+      state.boardPage -= 1;
+    },
   },
 });
 
-export const { nextPage } = boardSlice.actions;
+export const { nextPage, prevPage } = boardSlice.actions;
 export default boardSlice.reducer;

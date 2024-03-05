@@ -17,7 +17,7 @@ export default function BoardListItemMetaData(
       {props.numOfComments || props.numOfLikes ? (
         <div className="after:content-['|'] after:px-1 flex items-center">
           {props.numOfLikes ? (
-            <NumOfLikes numOfLikes={props.numOfLikes} />
+            <NumOfLikes numOfLikes={props.numOfLikes} className={'mr-1'} />
           ) : (
             <></>
           )}

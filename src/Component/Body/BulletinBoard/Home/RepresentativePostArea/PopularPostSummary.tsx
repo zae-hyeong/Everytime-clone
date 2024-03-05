@@ -16,7 +16,7 @@ const PopularPostSummary: React.FC<{ post: PopulerPostSummery }> = (props) => (
           {props.post.board}
         </span>
         <div className="flex">
-          <NumOfLikes numOfLikes={props.post.numOfLikes} />
+          <NumOfLikes numOfLikes={props.post.numOfLikes} className="mr-1" />
           <NumOfComments numOfComments={props.post.numOfComments} />
         </div>
       </div>
