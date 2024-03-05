@@ -19,7 +19,7 @@ export default function BoardListItem(props: IBoardListItemProps) {
           <BoardListItemMetaData
             numOfComments={props.post.numOfComments}
             numOfLikes={props.post.numOfLikes}
-            uploadBefore={props.post.uploadBefore}
+            uploadBefore={props.post.uploadTime}
             uploader={props.post.uploader}
           />
         </div>
