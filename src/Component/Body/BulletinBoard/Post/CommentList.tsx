@@ -8,7 +8,7 @@ import { RootState } from "Component/Redux/Store";
 export interface IPostCommentListProps {}
 
 export default function PostCommentList(props: IPostCommentListProps) {
-  const comments = useSelector((state: RootState) => state.comments);
+  const comments = useSelector((state: RootState) => state.comment.comments);
 
   return (
     <div>
