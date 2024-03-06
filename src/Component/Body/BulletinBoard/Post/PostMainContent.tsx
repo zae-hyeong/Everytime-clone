@@ -5,10 +5,16 @@ import NumOfComments from "Component/PublicAsset/NumOfComments";
 import NumOfLikes from "Component/PublicAsset/NumOfLikes";
 import NumOfScraps from "Component/PublicAsset/NumOfScrap";
 import PostReactionButton from "./PostAsset/PostReactionButton";
+import Post from "public/class/Post";
 
-export interface IPostMainContentProps {}
+export interface IPostMainContentProps {
+  post?: Post;
+}
 
 export default function PostMainContent(props: IPostMainContentProps) {
+
+  if (props.post === undefined) return <div>NOT FOUNDED</div>
+
   return (
     <div className="w-full border-b p-3">
       <div className="flex justify-between items-start mb-3">
@@ -22,16 +28,13 @@ export default function PostMainContent(props: IPostMainContentProps) {
           </Link>
         </div>
       </div>
-      <h1 className="text-2xl font-bold mb-3">가나다라마바사</h1>
+      <h1 className="text-2xl font-bold mb-3">{props.post!.title}</h1>
       <p className="mb-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolore
-        optio quam, facilis ad obcaecati rerum consequatur soluta quidem vel
-        repellendus repudiandae suscipit nihil, repellat magnam modi voluptate
-        earum adipisci.
+        {props.post!.content}
       </p>
       <div className="flex mb-3">
-        <NumOfLikes numOfLikes={0} className="mr-2" />
-        <NumOfComments numOfComments={0} className="mr-2" />
+        <NumOfLikes numOfLikes={props.post!.numOfLikes} className="mr-2" />
+        <NumOfComments numOfComments={props.post!.numOfComments} className="mr-2" />
         <NumOfScraps numOfScraps={0} />
       </div>
       <div className="flex">
