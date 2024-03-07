@@ -3,14 +3,17 @@ import PostMainContent from "./PostMainContent";
 import CommentList from "./CommentList";
 import ListLinkBtn from "./PostAsset/ListLinkButton";
 import { useParams } from "react-router-dom";
-import { dummyPosts } from "public/dummyData/dummyData";
+import { useSelector } from "react-redux";
+import { RootState } from "Component/Redux/Store";
 
 export interface IPostProps {}
 
 export default function Post(props: IPostProps) {
   const { postId } = useParams<{ postId: string }>();
 
-  const post = dummyPosts.find((post) => post.postId === postId);
+  const posts = useSelector((state: RootState) => state.post.posts);
+
+  const post = posts.find((post) => post.postId === postId);
 
   return (
     <>

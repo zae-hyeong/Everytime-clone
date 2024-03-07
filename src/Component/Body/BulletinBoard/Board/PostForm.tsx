@@ -1,6 +1,12 @@
 import * as React from "react";
 import FormBottomMenu from "./PostFormAsset/FormBottomMenu";
 import FormTitleArea from "./PostFormAsset/FormTitleArea";
+import Post from "public/class/Post";
+import { useDispatch, useSelector } from "react-redux";
+import { appendPost } from "Component/Redux/postSlice";
+import { initialPage } from "Component/Redux/boardSlice";
+import { RootState } from "Component/Redux/Store";
+import { contentInput, initialInput } from "Component/Redux/uploadPostSlice";
 
 export interface IPostFormProps {}
 
@@ -37,13 +43,46 @@ export default function PostForm(props: IPostFormProps) {
   const inputFocusHandler: React.FocusEventHandler = (e) => {
     setIsInputActive(true);
   };
-
   const cancelWriteHandler: React.MouseEventHandler = () => {
     setIsInputActive(false);
   };
 
+  const dispatch = useDispatch();
+
+  const postTitleInput = useSelector(
+    (state: RootState) => state.postInput.title
+  );
+  const postContentInput = useSelector(
+    (state: RootState) => state.postInput.content
+  );
+
+  const submitPostFormHandler: React.FormEventHandler = (e) => {
+    e.preventDefault();
+
+    if (!postTitleInput || !postContentInput) {
+      alert("제목과 내용을 입력해주세요.");
+      return;
+    }
+
+    dispatch(initialPage());
+    dispatch(
+      appendPost(
+        new Post(postTitleInput, postContentInput, "자유게시판", "익명", [])
+      )
+    );
+    dispatch(initialInput());
+  };
+
+  const contentInputHandler = (e: any) => {
+    dispatch(contentInput(e.target.value));
+  };
+
   return (
-    <form action="submit" className="w-full border-2 border-gray-300 p-0 my-1">
+    <form
+      action="submit"
+      className="w-full border-2 border-gray-300 p-0 my-1"
+      onSubmit={submitPostFormHandler}
+    >
       {isInputActive ? (
         <>
           <FormTitleArea onCancelClicked={cancelWriteHandler} />
@@ -51,6 +90,8 @@ export default function PostForm(props: IPostFormProps) {
             <textarea
               placeholder={inputPlaceholde_active}
               className="w-full h-full p-3 text-sm outline-none"
+              onChange={contentInputHandler}
+              value={postContentInput}
             ></textarea>
           </div>
           <FormBottomMenu />
