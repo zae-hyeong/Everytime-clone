@@ -36,6 +36,7 @@ const MainBoardArea: React.FC = () => {
             postListTitle={board.title}
             boardId={board.boardId}
             recentPosts={dummyBoardPosts}
+            key={board.boardId}
           />
         ))}
       </ul>

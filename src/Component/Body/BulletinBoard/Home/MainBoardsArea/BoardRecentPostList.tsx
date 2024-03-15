@@ -11,7 +11,7 @@ const BoardRecentPostList: React.FC<{
   return (
     <li className="bg-origin-content bg-white">
       <ul>
-        <li>
+        <li key={'board-recent-post-title-header'}>
           <Link to={`/Board/${props.boardId}`}>
             <h3 className="text-main font-bold p-2 border">
               {props.postListTitle}
@@ -19,7 +19,7 @@ const BoardRecentPostList: React.FC<{
           </Link>
         </li>
         {props.recentPosts.map((boardPost) => (
-          <BoardRecentPost boardPost={boardPost} />
+          <BoardRecentPost boardPost={boardPost} key={boardPost.postId} />
         ))}
       </ul>
     </li>

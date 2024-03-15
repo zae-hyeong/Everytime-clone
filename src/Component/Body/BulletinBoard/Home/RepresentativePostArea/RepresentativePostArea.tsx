@@ -22,23 +22,23 @@ const RepresentativePostArea: React.FC<{ className: string }> = (props) => {
       </form>
       <PostList postListTitle={"실시간 인기 글"}>
         {dummyData.dummyPopulerPost.map((post) => (
-          <PopularPostSummary post={post} />
+          <PopularPostSummary post={post} key={post.postId} />
         ))}
       </PostList>
       <PostList postListTitle={"HOT 게시물"}>
         {dummyData.dummyHotPosts.map((post) => (
-          <HotPost boardPost={post} />
+          <HotPost boardPost={post} key={post.postId} />
         ))}
       </PostList>
       <PostList postListTitle={"BEST 게시판"}></PostList>
       <PostList postListTitle={"학교 소식"}>
         {[dummyData.dummySchoolNews].map((post) => (
-          <PopularPostSummary post={post} />
+          <PopularPostSummary post={post} key={post.postId} />
         ))}
       </PostList>
       <PostList postListTitle={"최근 강의평"}>
         {dummyData.dummyLectureReviews.map((review) => (
-          <RecentLectureReviewItem review={review} />
+          <RecentLectureReviewItem review={review} key={review.reviewPostId} />
         ))}
       </PostList>
     </div>

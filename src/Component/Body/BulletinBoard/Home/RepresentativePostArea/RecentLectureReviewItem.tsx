@@ -7,7 +7,7 @@ const RecentLectureReviewItem: React.FC<{ review: SubjectReviewSummery }> = (
   props
 ) => {
   return (
-    <li className="border px-2 py-1 hover:bg-white">
+    <li key={props.review.reviewPostId} className="border px-2 py-1 hover:bg-white">
       <Link to="#">
         <img
           src={starRating}
