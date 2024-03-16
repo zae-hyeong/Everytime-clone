@@ -12,22 +12,39 @@ const dummyNavigationTitle: NavigationItem[] = [
   new NavigationItem("캠퍼스픽", "nti7", "CampusPick"),
 ];
 
-const Navigation: React.FC<{ className: string }> = (props) => {
+const Navigation: React.FC<{ isConcised: boolean }> = (props) => {
   return (
-    <nav className={props.className + " w-full h-full flex items-center"}>
+    <nav
+      className={
+        props.isConcised
+          ? "w-full hidden h-full items-center md:flex md:flex-row"
+          : "w-full flex flex-col"
+      }
+    >
       <ul
-        className="grow justify-center bold h-full
-        md:text-base md:inline-flex lg:text-lg"
+        className={
+          "grow justify-center bold h-full" + 
+          (props.isConcised
+            ? "md:text-base md:inline-flex lg:text-lg"
+            : "")
+        }
       >
         {dummyNavigationTitle.map((navItem) => (
           <li
             key={navItem.id}
-            className={"mx-[12px] h-full cursor-pointer font-bold hover:text-main"}
+            className={
+              "font-bold " +
+              (props.isConcised ? "mx-3 cursor-pointer hover:text-main" : "")
+            }
           >
             <NavLink
               to={navItem.linkDomain}
               className={({ isActive }) =>
-                isActive ? "block h-[80px] leading-[80px] box-border border-b-4 border-main text-main" : "block h-[80px] leading-[80px] box-border"
+                props.isConcised
+                  ? "block h-[80px] leading-[80px] box-border " +
+                    (isActive ? "border-b-4 border-main text-main" : "")
+                  : "block p-4 hover:text-main hover:bg-gray-100 " +
+                    (isActive ? "text-main bg-gray-100" : "")
               }
             >
               {navItem.title}

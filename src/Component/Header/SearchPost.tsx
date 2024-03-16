@@ -1,8 +1,6 @@
 import * as React from "react";
 
-export interface ISearchPostProps {
-  className: string;
-}
+export interface ISearchPostProps {}
 
 export default function SearchPost(props: ISearchPostProps) {
   const [isSearchWindowActive, setIsSearchWindowActive] = React.useState(false);
@@ -26,7 +24,7 @@ export default function SearchPost(props: ISearchPostProps) {
   return (
     <>
       <button
-        className={props.className + " text-sm text-main md:hidden"}
+        className={"md:hidden text-sm text-main"}
         onClick={searchPostClickHandler}
       >
         글 검색
