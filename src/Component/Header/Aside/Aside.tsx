@@ -2,15 +2,15 @@ import * as React from "react";
 import Logo from "../Logo";
 import Navigation from "../Navigation";
 import UserMenu from "../UserMenu";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "Component/Redux/Store";
+import { useSelector } from "react-redux";
+import { RootState, useAppDispatch } from "Component/Redux/Store";
 import { activeAside } from "Component/Redux/asideSlice";
 
 export interface IAsideProps {}
 
 export default function Aside(props: IAsideProps) {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   
   const headerCloseClickHandler: React.MouseEventHandler = () => {
     dispatch(activeAside(false));

@@ -1,14 +1,14 @@
-import { RootState } from "Component/Redux/Store";
+import { RootState, useAppDispatch } from "Component/Redux/Store";
 import { titleInput } from "Component/Redux/uploadPostSlice";
 import * as React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export interface IFormTitleAreaProps {
   onCancelClicked: React.MouseEventHandler;
 }
 
 export default function FormTitleArea(props: IFormTitleAreaProps) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const postTitleInput = useSelector(
     (state: RootState) => state.postInput.title

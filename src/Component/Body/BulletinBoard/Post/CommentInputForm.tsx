@@ -1,14 +1,14 @@
+import { useAppDispatch } from "Component/Redux/Store";
 import { appendComment } from "Component/Redux/commentSlice";
 import Comment from "public/class/Comment";
 import * as React from "react";
-import { useDispatch } from "react-redux";
 
 export interface ICommentInputFormProps {}
 
 export default function CommentInputForm(props: ICommentInputFormProps) {
   const commentInputRef = React.useRef<HTMLInputElement>(null);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const submitCommentHandler: React.FormEventHandler = (e) => {
     e.preventDefault();

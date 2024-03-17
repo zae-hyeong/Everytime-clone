@@ -1,14 +1,14 @@
-import { RootState } from "Component/Redux/Store";
+import { RootState, useAppDispatch } from "Component/Redux/Store";
 import { nextPage, prevPage } from "Component/Redux/boardSlice";
 import * as React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export interface IBottomMenuProps {}
 
 export default function BottomMenu(props: IBottomMenuProps) {
   const page = useSelector((state: RootState) => state.board.boardPage);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const nextButtonHandler: React.MouseEventHandler = (e) => {
     e.preventDefault();

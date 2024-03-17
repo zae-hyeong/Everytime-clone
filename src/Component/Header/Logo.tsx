@@ -2,12 +2,12 @@ import React, { MouseEventHandler } from "react";
 import hamburgerIcon from "public/img/hamburger.png";
 import headerLogo from "public/img/main-logo.png";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { activeAside } from "Component/Redux/asideSlice";
+import { useAppDispatch } from "Component/Redux/Store";
 
 const Logo: React.FC<{ isConcised: boolean; className?: string }> = (props) => {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   
   const headerOpenClickHandler: MouseEventHandler = () => {
     dispatch(activeAside(true));

@@ -2,10 +2,10 @@ import * as React from "react";
 import FormBottomMenu from "./PostFormAsset/FormBottomMenu";
 import FormTitleArea from "./PostFormAsset/FormTitleArea";
 import Post from "public/class/Post";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { appendPost } from "Component/Redux/postSlice";
 import { initialPage } from "Component/Redux/boardSlice";
-import { RootState } from "Component/Redux/Store";
+import { RootState, useAppDispatch } from "Component/Redux/Store";
 import { contentInput, initialInput } from "Component/Redux/uploadPostSlice";
 
 export interface IPostFormProps {}
@@ -47,7 +47,7 @@ export default function PostForm(props: IPostFormProps) {
     setIsInputActive(false);
   };
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const postTitleInput = useSelector(
     (state: RootState) => state.postInput.title
