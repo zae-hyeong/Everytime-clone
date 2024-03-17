@@ -23,10 +23,8 @@ const Navigation: React.FC<{ isConcised: boolean }> = (props) => {
     >
       <ul
         className={
-          "grow justify-center bold h-full" + 
-          (props.isConcised
-            ? "md:text-base md:inline-flex lg:text-lg"
-            : "")
+          "grow justify-center bold h-full " +
+          (props.isConcised ? "md:text-base md:inline-flex lg:text-lg" : "")
         }
       >
         {dummyNavigationTitle.map((navItem) => (

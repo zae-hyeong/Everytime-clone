@@ -3,6 +3,7 @@ import commentSlice from "./commentSlice";
 import postSlice from "./postSlice";
 import boardSlice from "./boardSlice";
 import uploadPostSlice from "./uploadPostSlice";
+import asideSlice from "./asideSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     post: postSlice,
     board: boardSlice,
     postInput: uploadPostSlice,
+    aside: asideSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

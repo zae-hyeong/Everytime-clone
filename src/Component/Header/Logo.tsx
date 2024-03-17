@@ -2,11 +2,21 @@ import React, { MouseEventHandler } from "react";
 import hamburgerIcon from "public/img/hamburger.png";
 import headerLogo from "public/img/main-logo.png";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { activeAside } from "Component/Redux/asideSlice";
 
 const Logo: React.FC<{ isConcised: boolean; className?: string }> = (props) => {
+
+  const dispatch = useDispatch();
+  
   const headerOpenClickHandler: MouseEventHandler = () => {
-    //TODO: 클릭하면 aside 열리게
+    dispatch(activeAside(true));
   };
+
+  const headerCloseClickHandler: MouseEventHandler = () => {
+    dispatch(activeAside(false));
+  };
+
 
   return (
     <div className={props.className + " flex items-center shrink-0"}>
@@ -21,6 +31,7 @@ const Logo: React.FC<{ isConcised: boolean; className?: string }> = (props) => {
           className="w-[40px] h-[40px] mr-2"
           src={headerLogo}
           alt="header logo"
+          onClick={headerCloseClickHandler}
         />
       </Link>
       <div
