@@ -26,63 +26,41 @@ Git Hub : https://github.com/zae-hyeong/Everytime-clone
 ## 📖 Detail Description
 
 ### Design (원래 웹 사이트)
-
-![원본 홈페이지 : https://everytime.kr/](![원본-메인-반응형](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/2c9042f7-430c-49ce-bd0f-022bdec7658f))
-
+![origin](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/8b5aa3f5-6f50-474d-8166-49c2577485c5)
 원본 홈페이지 : https://everytime.kr/
 
-![완성된 홈페이지](![수정-메인-반응형](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/dbd9996f-eb98-4c8b-a273-8bbd52bcccbd))
-
-완성된 홈페이지
+![clone](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/0990d68c-7626-4226-aa1f-6b2cba22366c)
+완성된 클론 홈페이지
 
 ### 구현
 
 1. 반응형 제작, 원본 홈페이지의 미흡사항 수정
-    
     원래 웹 사이트에서 있던 반응성이 떨어지는 구간들을 수정하여 개선하였다.
-    
     1. 메인 페이지
-        
-        
-        ![원본 홈페이지](![원본-게시물-반응형](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/00b413c1-0d43-4223-b4a1-37ec7eb035bd))
-        
+        ![원본-메인-반응형](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/2c9042f7-430c-49ce-bd0f-022bdec7658f)
         원본 홈페이지
-        
         가운데 정렬은 되나, 창이 작아져도 콘텐츠의 크기가 줄어들지 않는다.
-        
-        ![수정 후](![수정-게시물-반응형](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/76d73f07-f827-4510-aa70-a7383185a44d))
-        
+
+        ![수정-메인-반응형](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/dbd9996f-eb98-4c8b-a273-8bbd52bcccbd)
         수정 후
-        
         기본적으로 가운데 정렬이 되며, 콘텐츠 크기보다 창이 작아지면 콘텐츠의 크기가 줄어들며 한 눈에 들어오게 된다.
         
     2. 게시물 페이지
-        
-        
-        ![원본 홈페이지](https://prod-files-secure.s3.us-west-2.amazonaws.com/4f4a1d9d-f6a7-49f1-9179-d3c151d0ec0e/badbee61-e56f-4441-85ab-d9cfadb9323d/%EC%9B%90%EB%B3%B8-%EA%B2%8C%EC%8B%9C%EB%AC%BC-%EB%B0%98%EC%9D%91%ED%98%95.gif)
-        
+        ![원본-게시물-반응형](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/00b413c1-0d43-4223-b4a1-37ec7eb035bd)
         원본 홈페이지
-        
         오른쪽에 추천 게시물 탭이 잘리고 아래 footer가 잘린다.
         
-        ![수정 후](https://prod-files-secure.s3.us-west-2.amazonaws.com/4f4a1d9d-f6a7-49f1-9179-d3c151d0ec0e/49633376-3d6b-4243-9fea-c2f15f737f6a/%EC%88%98%EC%A0%95-%EA%B2%8C%EC%8B%9C%EB%AC%BC-%EB%B0%98%EC%9D%91%ED%98%95.gif)
-        
+        ![수정-게시물-반응형](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/76d73f07-f827-4510-aa70-a7383185a44d)
         수정 후
-        
         오른쪽 추천 게시물 탭이 잘리지 않고, 어느정도 작아지면 숨겨지며, footer가 잘리지 않고 가운데에 잘 정렬된다.
         
 2. React Router를 사용한 SPA
-    
-    ![라우터 이동.gif](https://prod-files-secure.s3.us-west-2.amazonaws.com/4f4a1d9d-f6a7-49f1-9179-d3c151d0ec0e/02d07816-dc62-4e80-ad5e-23db8ce3eefe/%EB%9D%BC%EC%9A%B0%ED%84%B0_%EC%9D%B4%EB%8F%99.gif)
-    
+    ![라우터 이동](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/01f3a2e7-0ca8-4bf4-b85a-d4e739f4198c)
     리액트 라우터를 사용하여, 헤더 네비게이션 클릭시, URL이 변경된다.
-    
     창이 작아졌을떄는 왼쪽의 aside를 통해서 페이지 이동이 가능하다.
     
 3. 게시물/댓글 업로드 기능
-    
-    ![게시물댓글-업로드.gif](https://prod-files-secure.s3.us-west-2.amazonaws.com/4f4a1d9d-f6a7-49f1-9179-d3c151d0ec0e/71dfdb31-6209-4687-94bb-8d8d09429ee2/%EA%B2%8C%EC%8B%9C%EB%AC%BC%EB%8C%93%EA%B8%80-%EC%97%85%EB%A1%9C%EB%93%9C.gif)
-    
+    ![게시물댓글-업로드](https://github.com/zae-hyeong/Everytime-clone/assets/58213558/d83a7ea9-f157-4f9f-b706-3e3d353236e7)
     게시물 조회, 업로드, 댓글 업로드 기능이 있으며, redux toolkit을 사용해 상태를 관리하였다.
     
 
