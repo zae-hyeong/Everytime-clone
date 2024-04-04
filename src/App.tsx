@@ -4,7 +4,7 @@ import ErrorPage from "./Component/Layout/ErrorPage";
 import TimeTable from "./Component/Body/TimeTabel/TimeTable";
 import Lectures from "./Component/Body/Lectures/Lectures";
 import CampusPick from "./Component/Body/CampusPick/CampusPick";
-import GradeCalculator from "./Component/Body/Friends/GradeCalculator/GradeCalculator";
+import GradeCalculator from "./Component/Body/GradeCalculator/GradeCalculator";
 import Friends from "./Component/Body/Friends/Friends";
 import BookStore from "./Component/Body/BookStore/BookStore";
 import { Board } from "./Component/Body/BulletinBoard/Board/Board";
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
           { path: "/", element: <BulletinBoard /> }, 
           {
             path: "/Board/:boardId",
-            element: <BoardLayout />, //TODO: make new Layout
+            element: <BoardLayout />,
             children: [
               { path: "", element: <Board /> },
               { path: ":postId", element: <Post /> }

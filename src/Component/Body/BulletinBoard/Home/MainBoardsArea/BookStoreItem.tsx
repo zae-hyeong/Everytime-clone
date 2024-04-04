@@ -9,7 +9,7 @@ export interface IBookStoreItemProps {
 
 export default function BookStoreItem(props: IBookStoreItemProps) {
   return (
-    <div className="hover:bg-gray-100 border">
+    <div className="white hover:bg-gray-100 border">
       <Link to="#">
         <img
           src={props.bookImage}
