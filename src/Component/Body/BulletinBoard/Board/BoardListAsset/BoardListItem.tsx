@@ -2,12 +2,16 @@ import * as React from "react";
 import Post from "public/class/Post";
 import { Link } from "react-router-dom";
 import BoardListItemMetaData from "./BoardListItemMetaData";
+import { SERVER_URL } from "public/server";
 
 export interface IBoardListItemProps {
   post: Post;
 }
 
 export default function BoardListItem(props: IBoardListItemProps) {
+
+  console.log(props.post.attachedImages);
+
   return (
     <li key={props.post.postId} className="border border-t-0 first:border hover:bg-gray-50 p-4">
       <Link to={`${props.post.postId}`} className="flex">
@@ -24,7 +28,7 @@ export default function BoardListItem(props: IBoardListItemProps) {
           />
         </div>
         <img
-          src={props.post.attachedImages![0]}
+          src={`${SERVER_URL}/${props.post.attachedImages![0]}`}
           alt="post thumbnail"
           className={
             props.post.attachedImages?.length
