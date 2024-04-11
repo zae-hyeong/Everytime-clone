@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 
 import bodyParser from "body-parser";
 import express from "express";
-
+import { dummyPosts } from "./data/post.module.js";
 
 const app = express();
 
@@ -19,19 +19,21 @@ app.use((req, res, next) => {
 });
 
 app.get("/posts", async (req, res) => {
-  const fileContent = await fs.readFile("./data/posts.json");
-
-  const postData = JSON.parse(fileContent);
-
-  res.status(200).json({ posts: postData });
+  res.status(200).json({
+    message: "dummy posts sended",
+    posts: [...dummyPosts],
+  });
 });
 
-app.get("/user-places", async (req, res) => {
-  const fileContent = await fs.readFile("./data/user-places.json");
+app.get("/posts/:postId", async (req, res) => {
+  const post = dummyPosts.find((post) => post.postId === req.params.postId);
 
-  const places = JSON.parse(fileContent);
+  console.log(post);
 
-  res.status(200).json({ places });
+  res.status(200).json({
+    message: "post sended",
+    post: { ...post },
+  });
 });
 
 app.put("/user-places", async (req, res) => {
