@@ -1,19 +1,16 @@
-import { useAppDispatch } from "Component/Redux/Store";
-import { appendComment } from "Component/Redux/commentSlice";
-import Comment from "public/class/Comment";
+import Comment, { IComment } from "public/class/Comment";
 import * as React from "react";
 
-export interface ICommentInputFormProps {}
+export interface ICommentInputFormProps {
+  onCommentSubmit: (data: IComment) => void;
+}
 
 export default function CommentInputForm(props: ICommentInputFormProps) {
   const commentInputRef = React.useRef<HTMLInputElement>(null);
 
-  const dispatch = useAppDispatch();
-
   const submitCommentHandler: React.FormEventHandler = (e) => {
     e.preventDefault();
-
-    dispatch(appendComment(new Comment(commentInputRef.current!.value, 0)));
+    props.onCommentSubmit(new Comment(commentInputRef.current!.value, 0));
     commentInputRef.current!.value = "";
   };
 
@@ -25,12 +22,13 @@ export default function CommentInputForm(props: ICommentInputFormProps) {
     >
       <input
         type="text"
+        name="comment"
         placeholder="댓글을 입력하세요."
         className="h-full flex-grow p-2 bg-gray-100 text-sm"
         ref={commentInputRef}
       />
       <div className="flex items-center">
-        <input type="checkbox" id="isAnonymous" />
+        <input type="checkbox" id="isAnonymous" name="isAnonymous" />
         <label
           htmlFor="isAnonymous"
           className="text-xs font-bold text-gray-500 ml-1"

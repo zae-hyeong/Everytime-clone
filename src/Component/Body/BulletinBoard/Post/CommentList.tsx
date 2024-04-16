@@ -26,6 +26,30 @@ export default function PostCommentList(props: IPostCommentListProps) {
     fetchComments();
   });
 
+  function submitHandler(data: IComment) {
+    async function putComment(data: IComment) {
+      try {
+        const response = await fetch(`${SERVER_URL}/comment`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        const { comments } = await response.json();
+        const commentList = comments.map(
+          (comment: IComment) =>
+            new Comment(comment.content, comment.numOfLikes)
+        );
+        setComments(commentList);
+      } catch (e) {
+        alert("ERROR : " + e);
+      }
+    }
+    putComment(data);
+  }
+
   return (
     <div>
       <ul>
@@ -33,7 +57,9 @@ export default function PostCommentList(props: IPostCommentListProps) {
           <CommentItem comment={comment} />
         ))}
       </ul>
-      <CommentInputForm />
+      <CommentInputForm
+        onCommentSubmit={submitHandler}
+      />
     </div>
   );
 }

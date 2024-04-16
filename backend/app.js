@@ -42,12 +42,12 @@ app.get("/comments", async (req, res) => {
   });
 });
 
-app.put("/comments", async (req, res) => {
-  const comment = req.body.places;
+app.put("/comment", async (req, res) => {
+  const comment = req.body;
 
-  await dummyComments.push(comment);
+  dummyComments.push(comment);
 
-  res.status(200).json({ message: "comment upload successful" });
+  res.status(200).json({ message: "comment upload successful", comments: dummyComments });
 });
 
 // 404
