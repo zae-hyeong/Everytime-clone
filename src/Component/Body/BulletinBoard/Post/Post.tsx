@@ -2,18 +2,30 @@ import * as React from "react";
 import PostMainContent from "./PostMainContent";
 import CommentList from "./CommentList";
 import ListLinkBtn from "./PostAsset/ListLinkButton";
+import { SERVER_URL } from "public/server";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState } from "Component/Redux/Store";
 
 export interface IPostProps {}
 
 export default function Post(props: IPostProps) {
-  const { postId } = useParams<{ postId: string }>();
+  const params = useParams();
 
-  const posts = useSelector((state: RootState) => state.post.posts);
+  const [post, setPost] = React.useState();
 
-  const post = posts.find((post) => post.postId === postId);
+  React.useEffect(() => {
+    async function fetchPost() {
+      try {
+        const postResponse = await fetch(
+          `${SERVER_URL}/posts/${params.postId}`
+        );
+        const postData = await postResponse.json();
+        setPost(postData.post);
+      } catch (e) {
+        alert("ERROR : " + e);
+      }
+    }
+    fetchPost();
+  }, [params]);
 
   return (
     <>

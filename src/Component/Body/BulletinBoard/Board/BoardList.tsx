@@ -8,14 +8,21 @@ export interface IBoardListProps {}
 
 export default function BoardList(props: IBoardListProps) {
   const page = useSelector((state: RootState) => state.board.boardPage);
-  // const posts = useSelector((state: RootState) => state.post.posts);
 
   const [posts, setPosts] = React.useState([]);
+
   React.useEffect(() => {
-    fetch(SERVER_URL + '/posts')
-    .then(res => res.json())
-    .then(resData => {setPosts(resData.posts)})
-  }, [])
+    async function fetchPosts() {
+      try {
+        const postsResponse = await fetch(SERVER_URL + "/posts");
+        const postsData = await postsResponse.json();
+        setPosts(postsData.posts);
+      } catch (e) {
+        alert("ERROR : " + e);
+      }
+    }
+    fetchPosts();
+  }, []);
 
   const startPage = page * 10;
   const endPage = page * 10 + 9;
