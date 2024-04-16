@@ -14,11 +14,10 @@ export default function PostCommentList(props: IPostCommentListProps) {
       try {
         const response = await fetch(`${SERVER_URL}/comments`);
         const { comments } = await response.json();
-        const commentList: IComment[] = [];
-
-        comments.map((comment: IComment) => {
-          commentList.push(new Comment(comment.content, comment.numOfLikes));
-        });
+        const commentList = comments.map(
+          (comment: IComment) =>
+            new Comment(comment.content, comment.numOfLikes)
+        );
         setComments(commentList);
       } catch (e) {
         alert("ERROR : " + e);
