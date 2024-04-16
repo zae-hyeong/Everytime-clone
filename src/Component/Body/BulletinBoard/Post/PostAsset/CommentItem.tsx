@@ -1,10 +1,10 @@
 import * as React from 'react';
 import anonymousUserProfileImg from 'public/img/anonymous-user-profile.png';
-import Comment from 'public/class/Comment';
+import { IComment } from 'public/class/Comment';
 import NumOfLikes from 'Component/PublicAsset/NumOfLikes';
 
 export interface ICommentItemProps {
-  comment: Comment;
+  comment: IComment;
 }
 
 export default function CommentItem (props: ICommentItemProps) {

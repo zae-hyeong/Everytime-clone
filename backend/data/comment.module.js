@@ -1,19 +1,6 @@
-import anonymousUserProfileImg from "public/img/anonymous-user-profile.png";
+const PROFILE_IMG = "anonymous-user-profile.png";
 
-export interface IComment {
-
-  content: string;
-  uploadTime: string;
-  numOfLikes: number;
-  isReplyComment?: boolean;
-  commentId: string;
-  profileImg?: string | undefined;
-  userName?: string | undefined;
-  upLoadTimeMeta?: Date;
-
-}
-
-export default class Comment implements IComment {
+export default class Comment {
   content;
   uploadTime;
   numOfLikes;
@@ -24,18 +11,18 @@ export default class Comment implements IComment {
   upLoadTimeMeta;
 
   constructor(
-    content: string,
-    numOfLikes: number,
-    isReplyComment: boolean = false,
-    profileImg?: string,
-    userName?: string
+    content,
+    numOfLikes,
+    isReplyComment,
+    profileImg,
+    userName
   ) {
     this.content = content;
     this.numOfLikes = numOfLikes;
     this.upLoadTimeMeta = new Date();
     this.isReplyComment = isReplyComment;
     this.userName = userName ? userName : "익명";
-    this.profileImg = profileImg ? profileImg : anonymousUserProfileImg;
+    this.profileImg = profileImg ? profileImg : PROFILE_IMG;
     this.commentId = Math.random().toString(36).substring(2, 11);
     this.uploadTime = `${(this.upLoadTimeMeta.getMonth() + 1)
       .toString()
@@ -51,3 +38,9 @@ export default class Comment implements IComment {
       .padStart(2, "0")}`;
   }
 }
+
+export const dummyComments = [
+  new Comment('우와 정말 대단해요!', 12),
+  new Comment('정말 좋은 정보 얻어갑니다!', 3),
+  new Comment('난 이 의견에 반대라고 본다, 세상에는 어쩌구 저쩌구 반박시 내말이 맞음', 0)
+];
