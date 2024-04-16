@@ -1,5 +1,3 @@
-import fs from "node:fs/promises";
-
 import bodyParser from "body-parser";
 import express from "express";
 import { dummyPosts } from "./data/post.module.js";
