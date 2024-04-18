@@ -10,7 +10,7 @@ export default function CommentInputForm(props: ICommentInputFormProps) {
 
   const submitCommentHandler: React.FormEventHandler = (e) => {
     e.preventDefault();
-    props.onCommentSubmit(new Comment(commentInputRef.current!.value, 0));
+    props.onCommentSubmit(new Comment({content: commentInputRef.current!.value}));
     commentInputRef.current!.value = "";
   };
 

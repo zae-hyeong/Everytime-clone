@@ -16,7 +16,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
         const { comments } = await response.json();
         const commentList = comments.map(
           (comment: IComment) =>
-            new Comment(comment.content, comment.numOfLikes)
+            new Comment({content: comment.content, numOfLikes: comment.numOfLikes})
         );
         setComments(commentList);
       } catch (e) {
@@ -40,7 +40,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
         const { comments } = await response.json();
         const commentList = comments.map(
           (comment: IComment) =>
-            new Comment(comment.content, comment.numOfLikes)
+            new Comment({content: comment.content, numOfLikes: comment.numOfLikes})
         );
         setComments(commentList);
       } catch (e) {
