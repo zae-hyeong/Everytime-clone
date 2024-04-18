@@ -24,7 +24,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
       }
     }
     fetchComments();
-  });
+  }, []);
 
   function submitHandler(data: IComment) {
     async function putComment(data: IComment) {
@@ -54,7 +54,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
     <div>
       <ul>
         {comments.map((comment) => (
-          <CommentItem comment={comment} />
+          <CommentItem comment={comment} key={comment.commentId}/>
         ))}
       </ul>
       <CommentInputForm
