@@ -16,7 +16,10 @@ export default function PostCommentList(props: IPostCommentListProps) {
         const { comments } = await response.json();
         const commentList = comments.map(
           (comment: IComment) =>
-            new Comment({content: comment.content, numOfLikes: comment.numOfLikes})
+            new Comment({
+              content: comment.content,
+              numOfLikes: comment.numOfLikes,
+            })
         );
         setComments(commentList);
       } catch (e) {
@@ -27,22 +30,24 @@ export default function PostCommentList(props: IPostCommentListProps) {
   }, []);
 
   function submitHandler(data: IComment) {
-    async function putComment(data: IComment) {
+    async function putComment(comment: IComment) {
       try {
         const response = await fetch(`${SERVER_URL}/comment`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(comment),
         });
 
-        const { comments } = await response.json();
-        const commentList = comments.map(
-          (comment: IComment) =>
-            new Comment({content: comment.content, numOfLikes: comment.numOfLikes})
-        );
-        setComments(commentList);
+        if (response.status === 200) {
+          setComments((comments) => [
+            ...comments,
+            new Comment({
+              content: comment.content
+            }),
+          ]);
+        }
       } catch (e) {
         alert("ERROR : " + e);
       }
@@ -54,12 +59,10 @@ export default function PostCommentList(props: IPostCommentListProps) {
     <div>
       <ul>
         {comments.map((comment) => (
-          <CommentItem comment={comment} key={comment.commentId}/>
+          <CommentItem comment={comment} key={comment.commentId} />
         ))}
       </ul>
-      <CommentInputForm
-        onCommentSubmit={submitHandler}
-      />
+      <CommentInputForm onCommentSubmit={submitHandler} />
     </div>
   );
 }

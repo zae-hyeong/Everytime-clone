@@ -47,7 +47,7 @@ app.put("/comment", async (req, res) => {
 
   dummyComments.push(comment);
 
-  res.status(200).json({ message: "comment upload successful", comments: dummyComments });
+  res.status(200).json({ message: "comment upload successful" });
 });
 
 // 404
