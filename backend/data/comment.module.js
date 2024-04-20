@@ -43,7 +43,7 @@ export default class Comment {
 }
 
 export const dummyComments = [
-  new Comment({ content: "우와 정말 대단해요!", numOfLikes: 12 }),
+  new Comment({ content: "우와 정말 대단해요!", numOfLikes: 12 , isMyComment: true}),
   new Comment({ content: "정말좋은 정보 얻어갑니다!", numOfLikes: 3 }),
   new Comment({
     content:

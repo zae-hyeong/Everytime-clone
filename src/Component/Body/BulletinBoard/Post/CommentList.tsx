@@ -18,7 +18,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
           (comment: IComment) =>
             new Comment({
               content: comment.content,
-              numOfLikes: comment.numOfLikes,
+              isMyComment: true,
             })
         );
         setComments(commentList);
@@ -44,7 +44,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
           setComments((comments) => [
             ...comments,
             new Comment({
-              content: comment.content
+              content: comment.content,
             }),
           ]);
         }
@@ -55,11 +55,21 @@ export default function PostCommentList(props: IPostCommentListProps) {
     putComment(data);
   }
 
+  function deleteCommentHandler(commentId: string) {
+    setComments((comments) =>
+      comments.filter((comment) => commentId !== comment.commentId)
+    );
+  }
+
   return (
     <div>
       <ul>
         {comments.map((comment) => (
-          <CommentItem comment={comment} key={comment.commentId} />
+          <CommentItem
+            comment={comment}
+            key={comment.commentId}
+            onCommentDelete={deleteCommentHandler}
+          />
         ))}
       </ul>
       <CommentInputForm onCommentSubmit={submitHandler} />

@@ -50,6 +50,21 @@ app.put("/comment", async (req, res) => {
   res.status(200).json({ message: "comment upload successful" });
 });
 
+app.get("/comment/:commentId", async (req, res) => {
+  console.log(req.params.commentId);
+
+  const commentIndex = dummyComments.indexOf(
+    (comment) => comment.commentId === req.params.commentId
+  );
+
+  // if (commentIndex === -1)
+  //   res.status(401).json({ message: "incorrect comment Id" });
+
+  dummyComments.splice(commentIndex, 1);
+
+  res.status(200).json({ message: "comment delete successful" });
+});
+
 // 404
 app.use((req, res, next) => {
   if (req.method === "OPTIONS") {
