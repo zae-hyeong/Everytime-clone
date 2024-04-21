@@ -14,15 +14,15 @@ export interface IComment {
 }
 
 export default class Comment implements IComment {
-  content;
-  uploadTime;
-  numOfLikes;
-  profileImg;
-  userName;
-  metaDataOfUploadTime;
-  isReplyComment;
-  isMyComment;
-  readonly commentId = Math.random().toString(36).substring(2, 11);
+  content: string;
+  uploadTime?: string | undefined;
+  numOfLikes?: number | undefined;
+  userName?: string | undefined;
+  profileImg?: string | undefined;
+  isReplyComment?: boolean | undefined;
+  metaDataOfUploadTime?: Date | undefined;
+  isMyComment?: boolean | undefined;
+  commentId? =  Math.random().toString(36).substring(2, 11);
 
   constructor({
     content,

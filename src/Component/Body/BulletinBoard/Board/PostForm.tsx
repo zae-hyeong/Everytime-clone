@@ -67,7 +67,7 @@ export default function PostForm(props: IPostFormProps) {
     dispatch(initialPage());
     dispatch(
       appendPost(
-        new Post(postTitleInput, postContentInput, "자유게시판", "익명", [])
+        new Post({title: postTitleInput, content: postContentInput})
       )
     );
     dispatch(initialInput());

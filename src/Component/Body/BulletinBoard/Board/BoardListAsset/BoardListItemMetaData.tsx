@@ -3,10 +3,10 @@ import NumOfLikes from "Component/PublicAsset/NumOfLikes";
 import * as React from "react";
 
 export interface IBoardListItemMetaDataProps {
-  numOfComments: number;
-  numOfLikes: number;
-  uploadBefore: string;
-  uploader: string;
+  numOfComments?: number;
+  numOfLikes?: number;
+  uploadBefore?: string;
+  uploader?: string;
 }
 
 export default function BoardListItemMetaData(

@@ -5,8 +5,8 @@ import * as React from "react";
 import PostReactionButton from "../PostAsset/PostReactionButton";
 
 export interface IPostMainFooterProps {
-  numOfLikes: number;
-  numOfComments: number;
+  numOfLikes?: number;
+  numOfComments?: number;
 }
 
 export default function PostMainFooter(props: IPostMainFooterProps) {
