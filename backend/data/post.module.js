@@ -3,7 +3,7 @@ class Post {
   content;
   uploadTime;
   board;
-  postId;
+  postId = Math.random().toString(36).substring(2, 11);
   uploadTimeMeta;
   numOfLikes;
   numOfComments;

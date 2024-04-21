@@ -21,7 +21,7 @@ export default class Post implements IPost {
   numOfComments?: number;
   uploader?: string;
   attachedImages?: string[];
-  readonly postId = Math.random().toString(36).substring(2, 11);
+  readonly postId? = Math.random().toString(36).substring(2, 11);
 
   constructor({
     title,

@@ -1,12 +1,13 @@
 import * as React from "react";
 import FormBottomMenu from "./PostFormAsset/FormBottomMenu";
 import FormTitleArea from "./PostFormAsset/FormTitleArea";
-import Post from "public/class/Post";
+import Post, { IPost } from "public/class/Post";
 import { useSelector } from "react-redux";
 import { appendPost } from "Component/Redux/postSlice";
 import { initialPage } from "Component/Redux/boardSlice";
 import { RootState, useAppDispatch } from "Component/Redux/Store";
 import { contentInput, initialInput } from "Component/Redux/uploadPostSlice";
+import { SERVER_URL } from "public/server";
 
 export interface IPostFormProps {}
 
@@ -40,15 +41,6 @@ const inputPlaceholde_active = `에브리타임은 누구나 기분 좋게 참�
 export default function PostForm(props: IPostFormProps) {
   const [isInputActive, setIsInputActive] = React.useState(false);
 
-  const inputFocusHandler: React.FocusEventHandler = (e) => {
-    setIsInputActive(true);
-  };
-  const cancelWriteHandler: React.MouseEventHandler = () => {
-    setIsInputActive(false);
-  };
-
-  const dispatch = useAppDispatch();
-
   const postTitleInput = useSelector(
     (state: RootState) => state.postInput.title
   );
@@ -56,25 +48,45 @@ export default function PostForm(props: IPostFormProps) {
     (state: RootState) => state.postInput.content
   );
 
+  const dispatch = useAppDispatch();
+
+  const inputFocusHandler: React.FocusEventHandler = (e) => {
+    setIsInputActive(true);
+  };
+  const cancelWriteHandler: React.MouseEventHandler = () => {
+    setIsInputActive(false);
+  };
+
+  const contentInputHandler = (e: any) => {
+    dispatch(contentInput(e.target.value));
+  };
+
   const submitPostFormHandler: React.FormEventHandler = (e) => {
     e.preventDefault();
+
+    async function uploadPost(post: IPost) {
+      const response = await fetch(`${SERVER_URL}/post`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(post),
+      });
+
+      if (response.status === 200) {
+        dispatch(initialPage());
+        dispatch(appendPost(post));
+        dispatch(initialInput());
+        setIsInputActive(false);
+      }
+    }
 
     if (!postTitleInput || !postContentInput) {
       alert("제목과 내용을 입력해주세요.");
       return;
     }
 
-    dispatch(initialPage());
-    dispatch(
-      appendPost(
-        new Post({title: postTitleInput, content: postContentInput})
-      )
-    );
-    dispatch(initialInput());
-  };
-
-  const contentInputHandler = (e: any) => {
-    dispatch(contentInput(e.target.value));
+    uploadPost(new Post({ title: postTitleInput, content: postContentInput }));
   };
 
   return (

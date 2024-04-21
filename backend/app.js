@@ -17,10 +17,11 @@ app.use((req, res, next) => {
   next();
 });
 
+/** /posts */
 app.get("/posts", async (req, res) => {
   res.status(200).json({
     message: "receive posts successful",
-    posts: [...dummyPosts],
+    posts: dummyPosts,
   });
 });
 
@@ -35,6 +36,33 @@ app.get("/posts/:postId", async (req, res) => {
   });
 });
 
+/** /post */
+app.put("/post", async (req, res) => {
+  const post = req.body;
+  
+  console.log(post);
+  
+  dummyPosts.unshift(post);
+
+  res.status(200).json({ message: "post upload successful" });
+});
+
+app.get("/post/:postId", async (req, res) => {
+  const postIndex = dummyPosts.findIndex(
+    (post) => post.postId === req.params.postId
+  );
+
+  console.log(dummyPosts[postIndex]);
+
+  if (postIndex === -1)
+    res.status(401).json({ message: "incorrect post Id" });
+  else {
+    dummyComments.splice(postIndex, 1);
+    res.status(200).json({ message: "delete post successful" });
+  }
+});
+
+/** /comments */
 app.get("/comments", async (req, res) => {
   res.status(200).json({
     message: "receive comments successful",
@@ -42,6 +70,7 @@ app.get("/comments", async (req, res) => {
   });
 });
 
+/** /comment */
 app.put("/comment", async (req, res) => {
   const comment = req.body;
 

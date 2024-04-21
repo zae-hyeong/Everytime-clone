@@ -1,20 +1,22 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import Post from "public/class/Post";
-import { dummyPosts } from "public/dummyData/dummyData";
+import { IPost } from "public/class/Post";
 
 export interface PostListState {
-  posts: Post[];
+  posts: IPost[];
 }
 
 const initialState: PostListState = {
-  posts: dummyPosts,
+  posts: [],
 };
 
 const postSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    appendPost: (state, action: PayloadAction<Post>) => {
+    setPosts: (state, action: PayloadAction<IPost[]>) => {
+      state.posts = action.payload;
+    },
+    appendPost: (state, action: PayloadAction<IPost>) => {
       state.posts = [action.payload, ...state.posts];
     },
     deletePost: (state, action: PayloadAction<string>) => {
@@ -25,5 +27,5 @@ const postSlice = createSlice({
   },
 });
 
-export const { appendPost, deletePost } = postSlice.actions;
+export const { appendPost, deletePost, setPosts } = postSlice.actions;
 export default postSlice.reducer;
