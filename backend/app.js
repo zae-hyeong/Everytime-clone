@@ -4,6 +4,7 @@ import { dummyPosts } from "./data/post.module.js";
 import { dummyComments } from "./data/comment.module.js";
 
 const app = express();
+const DELAY_TIME = 3000;
 
 app.use(express.static("images"));
 app.use(bodyParser.json());
@@ -19,10 +20,10 @@ app.use((req, res, next) => {
 
 /** /posts */
 app.get("/posts", async (req, res) => {
-  res.status(200).json({
+  setTimeout(() => res.status(200).json({
     message: "receive posts successful",
     posts: dummyPosts,
-  });
+  }), DELAY_TIME);
 });
 
 app.get("/posts/:postId", async (req, res) => {
@@ -30,10 +31,10 @@ app.get("/posts/:postId", async (req, res) => {
 
   console.log(post);
 
-  res.status(200).json({
+  setTimeout(() => res.status(200).json({
     message: "receive post successful",
     post: { ...post },
-  });
+  }), DELAY_TIME);
 });
 
 /** /post */
@@ -44,7 +45,7 @@ app.put("/post", async (req, res) => {
   
   dummyPosts.unshift(post);
 
-  res.status(200).json({ message: "post upload successful" });
+  setTimeout(() => res.status(200).json({ message: "post upload successful" }), DELAY_TIME);
 });
 
 app.get("/post/:postId", async (req, res) => {
@@ -59,16 +60,16 @@ app.get("/post/:postId", async (req, res) => {
   else {
     dummyPosts.splice(postIndex, 1);
     console.log(dummyPosts);
-    res.status(200).json({ message: "delete post successful" });
+    setTimeout(() => res.status(200).json({ message: "delete post successful" }), DELAY_TIME);
   }
 });
 
 /** /comments */
 app.get("/comments", async (req, res) => {
-  res.status(200).json({
+  setTimeout(() => res.status(200).json({
     message: "receive comments successful",
     comments: dummyComments,
-  });
+  }), DELAY_TIME);
 });
 
 /** /comment */
@@ -79,7 +80,7 @@ app.put("/comment", async (req, res) => {
 
   console.log(dummyComments);
 
-  res.status(200).json({ message: "comment upload successful" });
+  setTimeout(() => res.status(200).json({ message: "comment upload successful" }), DELAY_TIME);
 });
 
 app.get("/comment/:commentId", async (req, res) => {
@@ -93,7 +94,7 @@ app.get("/comment/:commentId", async (req, res) => {
     res.status(401).json({ message: "incorrect comment Id" });
   else {
     dummyComments.splice(commentIndex, 1);
-    res.status(200).json({ message: "comment delete successful" });
+    setTimeout(() => res.status(200).json({ message: "comment delete successful" }), DELAY_TIME);
   }
 });
 
