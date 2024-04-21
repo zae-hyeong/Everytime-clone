@@ -46,15 +46,17 @@ export default function CommentItem(props: ICommentItemProps) {
         </div>
 
         <ul className="flex text-xs text-gray-400">
-          <li className="mr-2">대댓글</li>
-          <li className="mr-2">공감</li>
+          <li className="mr-2 cursor-pointer">대댓글</li>
+          <li className="mr-2 cursor-pointer">공감</li>
           {isMyComment ? (
-            <>
-              <li className="mr-2">쪽지</li>
-              <li>신고</li>
-            </>
+            <li className="cursor-pointer" onClick={deleteHandler}>
+              삭제
+            </li>
           ) : (
-            <li onClick={deleteHandler}>삭제</li>
+            <>
+              <li className="mr-2 cursor-pointer">쪽지</li>
+              <li className="cursor-pointer">신고</li>
+            </>
           )}
         </ul>
       </div>

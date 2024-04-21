@@ -1,7 +1,7 @@
 import * as React from "react";
 import CommentInputForm from "./CommentInputForm";
 import CommentItem from "./PostAsset/CommentItem";
-import Comment, { IComment } from "public/class/Comment";
+import { IComment } from "public/class/Comment";
 import { SERVER_URL } from "public/server";
 
 export interface IPostCommentListProps {}
@@ -14,14 +14,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
       try {
         const response = await fetch(`${SERVER_URL}/comments`);
         const { comments } = await response.json();
-        const commentList = comments.map(
-          (comment: IComment) =>
-            new Comment({
-              content: comment.content,
-              isMyComment: true,
-            })
-        );
-        setComments(commentList);
+        setComments(comments);
       } catch (e) {
         alert("ERROR : " + e);
       }
@@ -29,7 +22,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
     fetchComments();
   }, []);
 
-  function submitHandler(data: IComment) {
+  function submitCommentHandler(comment: IComment) {
     async function putComment(comment: IComment) {
       try {
         const response = await fetch(`${SERVER_URL}/comment`, {
@@ -41,18 +34,13 @@ export default function PostCommentList(props: IPostCommentListProps) {
         });
 
         if (response.status === 200) {
-          setComments((comments) => [
-            ...comments,
-            new Comment({
-              content: comment.content,
-            }),
-          ]);
+          setComments((comments) => [...comments, comment]);
         }
       } catch (e) {
         alert("ERROR : " + e);
       }
     }
-    putComment(data);
+    putComment(comment);
   }
 
   function deleteCommentHandler(commentId: string) {
@@ -72,7 +60,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
           />
         ))}
       </ul>
-      <CommentInputForm onCommentSubmit={submitHandler} />
+      <CommentInputForm onCommentSubmit={submitCommentHandler} />
     </div>
   );
 }

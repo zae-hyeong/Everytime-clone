@@ -1,4 +1,5 @@
-import anonymousUserProfileImg from "public/img/anonymous-user-profile.png";
+// import anonymousUserProfileImg from "public/img/anonymous-user-profile.png";
+const anonymousUserProfileImg = "anonymous-user-profile.png";
 
 export interface IComment {
   content: string;

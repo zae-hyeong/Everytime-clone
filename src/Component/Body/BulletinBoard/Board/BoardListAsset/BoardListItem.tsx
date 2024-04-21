@@ -10,8 +10,6 @@ export interface IBoardListItemProps {
 
 export default function BoardListItem(props: IBoardListItemProps) {
 
-  console.log(props.post.attachedImages);
-
   return (
     <li key={props.post.postId} className="border border-t-0 first:border hover:bg-gray-50 p-4">
       <Link to={`${props.post.postId}`} className="flex">

@@ -47,22 +47,24 @@ app.put("/comment", async (req, res) => {
 
   dummyComments.push(comment);
 
+  console.log(dummyComments);
+
   res.status(200).json({ message: "comment upload successful" });
 });
 
 app.get("/comment/:commentId", async (req, res) => {
-  console.log(req.params.commentId);
-
-  const commentIndex = dummyComments.indexOf(
+  const commentIndex = dummyComments.findIndex(
     (comment) => comment.commentId === req.params.commentId
   );
 
-  // if (commentIndex === -1)
-  //   res.status(401).json({ message: "incorrect comment Id" });
+  console.log(dummyComments[commentIndex]);
 
-  dummyComments.splice(commentIndex, 1);
-
-  res.status(200).json({ message: "comment delete successful" });
+  if (commentIndex === -1)
+    res.status(401).json({ message: "incorrect comment Id" });
+  else {
+    dummyComments.splice(commentIndex, 1);
+    res.status(200).json({ message: "comment delete successful" });
+  }
 });
 
 // 404
