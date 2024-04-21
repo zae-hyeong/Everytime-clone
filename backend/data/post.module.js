@@ -9,6 +9,7 @@ class Post {
   numOfComments;
   uploader;
   attachedImages;
+  isMyPost;
   
   constructor({
     title,
@@ -19,6 +20,7 @@ class Post {
     numOfLikes = 0,
     numOfComments = 0,
     uploadTimeMeta = new Date(),
+    isMyPost = false
   }) {
     this.title = title;
     this.content = content;
@@ -28,6 +30,7 @@ class Post {
     this.uploader = uploader;
     this.attachedImages = attachedImages;
     this.uploadTimeMeta = uploadTimeMeta;
+    this.isMyPost = isMyPost;
     this.uploadTime = `${(this.uploadTimeMeta.getMonth() + 1)
       .toString()
       .padStart(2, "0")}/${this.uploadTimeMeta

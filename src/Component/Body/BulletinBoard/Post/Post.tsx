@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 export interface IPostProps {}
 
 export default function Post(props: IPostProps) {
+
   const params = useParams();
 
   const [post, setPost] = React.useState();

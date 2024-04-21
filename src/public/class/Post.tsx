@@ -9,6 +9,7 @@ export interface IPost {
   numOfComments?: number;
   uploader?: string;
   attachedImages?: string[];
+  isMyPost?: boolean;
 }
 
 export default class Post implements IPost {
@@ -21,6 +22,7 @@ export default class Post implements IPost {
   numOfComments?: number;
   uploader?: string;
   attachedImages?: string[];
+  isMyPost?: boolean;
   readonly postId? = Math.random().toString(36).substring(2, 11);
 
   constructor({
@@ -32,6 +34,7 @@ export default class Post implements IPost {
     numOfLikes = 0,
     numOfComments = 0,
     uploadTimeMeta = new Date(),
+    isMyPost = false
   }: IPost) {
     this.title = title;
     this.content = content;
@@ -41,6 +44,7 @@ export default class Post implements IPost {
     this.uploader = uploader;
     this.attachedImages = attachedImages;
     this.uploadTimeMeta = uploadTimeMeta;
+    this.isMyPost = isMyPost;
     this.uploadTime = `${(this.uploadTimeMeta.getMonth() + 1)
       .toString()
       .padStart(2, "0")}/${this.uploadTimeMeta

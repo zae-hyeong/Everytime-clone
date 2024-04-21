@@ -86,7 +86,7 @@ export default function PostForm(props: IPostFormProps) {
       return;
     }
 
-    uploadPost(new Post({ title: postTitleInput, content: postContentInput }));
+    uploadPost(new Post({ title: postTitleInput, content: postContentInput, isMyPost: true }));
   };
 
   return (

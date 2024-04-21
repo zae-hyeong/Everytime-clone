@@ -1,11 +1,11 @@
 import * as React from "react";
-import Post from "public/class/Post";
+import {IPost} from "public/class/Post";
 import PostMainHeader from "./PostMainContentAsset/PostMainHeader";
 import PostMainBody from "./PostMainContentAsset/PostMainBody";
 import PostMainFooter from "./PostMainContentAsset/PostMainFooter";
 
 export interface IPostMainContentProps {
-  post?: Post;
+  post?: IPost;
 }
 
 export default function PostMainContent(props: IPostMainContentProps) {
@@ -14,7 +14,7 @@ export default function PostMainContent(props: IPostMainContentProps) {
 
   return (
     <div className="w-full border-b p-3">
-      <PostMainHeader />
+      <PostMainHeader isMyPost={props.post.isMyPost} />
       <PostMainBody
         title={props.post!.title}
         content={props.post!.content}

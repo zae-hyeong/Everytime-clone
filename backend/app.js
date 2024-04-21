@@ -57,7 +57,8 @@ app.get("/post/:postId", async (req, res) => {
   if (postIndex === -1)
     res.status(401).json({ message: "incorrect post Id" });
   else {
-    dummyComments.splice(postIndex, 1);
+    dummyPosts.splice(postIndex, 1);
+    console.log(dummyPosts);
     res.status(200).json({ message: "delete post successful" });
   }
 });
