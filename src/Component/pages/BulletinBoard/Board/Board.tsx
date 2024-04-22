@@ -1,7 +1,7 @@
 import * as React from "react";
-import PostForm from "./PostForm";
-import BottomMenu from "./BottomMenu";
-import BoardList from "./BoardList";
+import BoardList from "./assets/BoardList";
+import BottomMenu from "./assets/BottomMenu";
+import PostForm from "./assets/PostForm";
 
 export interface IBoardProps {}
 

@@ -1,10 +1,10 @@
 import * as React from "react";
-import BoardListItem from "./BoardListAsset/BoardListItem";
-import { RootState, useAppDispatch } from "Component/Redux/Store";
 import { useSelector } from "react-redux";
 import { SERVER_URL } from "public/server";
 import { IPost } from "public/class/Post";
+import { RootState, useAppDispatch } from "Component/Redux/Store";
 import { setPosts } from "Component/Redux/postSlice";
+import BoardListItem from "./BoardListItem";
 
 export interface IBoardListProps {}
 

@@ -1,8 +1,8 @@
 import * as React from "react";
 import {IPost} from "public/class/Post";
-import PostMainHeader from "./PostMainContentAsset/PostMainHeader";
-import PostMainBody from "./PostMainContentAsset/PostMainBody";
-import PostMainFooter from "./PostMainContentAsset/PostMainFooter";
+import PostMainBody from "../../assets/PostMainContentAsset/PostMainBody";
+import PostMainFooter from "../../assets/PostMainContentAsset/PostMainFooter";
+import PostMainHeader from "../../assets/PostMainContentAsset/PostMainHeader";
 
 export interface IPostMainContentProps {
   post?: IPost;

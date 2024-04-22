@@ -12,6 +12,7 @@ export interface IPostMainHeaderProps {
 export default function PostMainHeader(props: IPostMainHeaderProps) {
   const { postId } = useParams<{ postId: string }>();
   const dispatch = useAppDispatch();
+
   const nav = useNavigate();
 
   function postDeleteHandler() {

@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "./Logo";
-import Navigation from "./Navigation";
-import UserMenu from "./UserMenu";
-import SearchPost from "./SearchPost";
-import Aside from "./Aside/Aside";
+import Aside from "../Aside/Aside";
+import Logo from "../assets/Logo";
+import SearchPost from "../assets/SearchPost";
+import UserMenu from "../assets/UserMenu";
+import Navigation from "../assets/Navigation";
 
 const Header: React.FC<{}> = () => {
   return (

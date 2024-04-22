@@ -1,9 +1,9 @@
 import * as React from "react";
-import PostMainContent from "./PostMainContent";
-import CommentList from "./CommentList";
-import ListLinkBtn from "./PostAsset/ListLinkButton";
 import { SERVER_URL } from "public/server";
 import { useParams } from "react-router-dom";
+import CommentList from "./Comment/CommentList";
+import PostMainContent from "./Comment/assets/PostMainContent";
+import ListLinkBtn from "./assets/PostAsset/ListLinkButton";
 
 export interface IPostProps {}
 

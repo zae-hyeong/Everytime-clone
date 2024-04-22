@@ -1,7 +1,7 @@
-import RepresentativePostArea from "Component/Body/BulletinBoard/Home/RepresentativePostArea/RepresentativePostArea";
 import * as React from "react";
 import { Outlet, useParams } from "react-router-dom";
 import BoardData from "public/class/Board";
+import RepresentativePostArea from "../assets/RepresentativePostArea/RepresentativePostArea";
 
 export interface IBoardLayoutProps {}
 

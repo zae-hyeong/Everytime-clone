@@ -1,9 +1,9 @@
 import React from "react";
-import UserInfoArea from "./Home/UserInfoArea/UserInfoArea";
-import BulletinBoardAdBanner from "./Home/MainBoardsArea/BulletinBoardAdBanner";
-import RepresentativePostArea from "./Home/RepresentativePostArea/RepresentativePostArea";
-import BookStore from "./Home/MainBoardsArea/BookStore";
-import MainBoardArea from "./Home/MainBoardsArea/MainBoardsArea";
+import UserInfoArea from "./assets/UserInfoArea/UserInfoArea";
+import BulletinBoardAdBanner from "./assets/MainBoardsArea/BulletinBoardAdBanner";
+import MainBoardArea from "./assets/MainBoardsArea/MainBoardsArea";
+import RepresentativePostArea from "./assets/RepresentativePostArea/RepresentativePostArea";
+import BookStore from "./assets/MainBoardsArea/BookStore";
 
 const BulletinBoard: React.FC = () => {
   return (

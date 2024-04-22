@@ -1,8 +1,8 @@
 import * as React from "react";
-import CommentInputForm from "./CommentInputForm";
-import CommentItem from "./PostAsset/CommentItem";
 import { IComment } from "public/class/Comment";
 import { SERVER_URL } from "public/server";
+import CommentItem from "../assets/PostAsset/CommentItem";
+import CommentInputForm from "./assets/CommentInputForm";
 
 export interface IPostCommentListProps {}
 

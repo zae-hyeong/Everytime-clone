@@ -1,6 +1,6 @@
-import Footer from "Component/Body/BulletinBoard/Footer";
 import * as React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "./assets/Footer";
 
 export interface IBulletinBoardLayoutProps {}
 

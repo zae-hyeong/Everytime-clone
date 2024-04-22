@@ -1,4 +1,4 @@
-import { RootState, useAppDispatch } from "Component/Redux/Store";
+import { useAppDispatch, RootState } from "Component/Redux/Store";
 import { titleInput } from "Component/Redux/uploadPostSlice";
 import * as React from "react";
 import { useSelector } from "react-redux";
