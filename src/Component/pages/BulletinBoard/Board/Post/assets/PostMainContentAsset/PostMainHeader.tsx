@@ -7,6 +7,7 @@ import { deletePost } from "Component/Redux/postSlice";
 
 export interface IPostMainHeaderProps {
   isMyPost?: boolean;
+  onPostDelete: (loadingState: boolean) => void;
 }
 
 export default function PostMainHeader(props: IPostMainHeaderProps) {
@@ -18,11 +19,15 @@ export default function PostMainHeader(props: IPostMainHeaderProps) {
   function postDeleteHandler() {
     async function fetchDeletePost(postId?: string) {
       try {
-        const response = await fetch(`${SERVER_URL}/post/${postId}`, { method: "GET" });
+        props.onPostDelete(true);
+        const response = await fetch(`${SERVER_URL}/post/${postId}`, {
+          method: "GET",
+        });
         if (response.status !== 200) throw new Error("Fail to delete Post");
 
+        props.onPostDelete(false);
         dispatch(deletePost(postId!));
-        nav('/Board/freeBoard')
+        nav("/Board/freeBoard");
       } catch (e) {
         alert("ERROR : " + e);
       }

@@ -6,6 +6,7 @@ import PostMainHeader from "../../assets/PostMainContentAsset/PostMainHeader";
 
 export interface IPostMainContentProps {
   post?: IPost;
+  onPostDelete: (loadingState: boolean) => void;
 }
 
 export default function PostMainContent(props: IPostMainContentProps) {
@@ -14,7 +15,7 @@ export default function PostMainContent(props: IPostMainContentProps) {
 
   return (
     <div className="w-full border-b p-3">
-      <PostMainHeader isMyPost={props.post.isMyPost} />
+      <PostMainHeader isMyPost={props.post.isMyPost} onPostDelete={props.onPostDelete} />
       <PostMainBody
         title={props.post!.title}
         content={props.post!.content}
