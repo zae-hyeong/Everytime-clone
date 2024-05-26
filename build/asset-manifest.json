@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.1038eb9d.css",
-    "main.js": "/static/js/main.5e17c7d9.js",
-    "static/js/592.012a0d9b.chunk.js": "/static/js/592.012a0d9b.chunk.js",
-    "static/media/AppleSDGothicNeoR.ttf": "/static/media/AppleSDGothicNeoR.d159b4d4ce2ef2592daa.ttf",
-    "static/media/side-dummy-ad-1.jpg": "/static/media/side-dummy-ad-1.8690e19973c454610161.jpg",
-    "static/media/side-dummy-ad-2.jpg": "/static/media/side-dummy-ad-2.c8d35139429950cdad71.jpg",
-    "static/media/side-dummy-ad-3.png": "/static/media/side-dummy-ad-3.8d2585f9a16bb5b1dd2f.png",
-    "static/media/dummyAdImg.png": "/static/media/dummyAdImg.15dd68c86e789a9db9a3.png",
-    "static/media/test-post-img-pet-2.jpg": "/static/media/test-post-img-pet-2.19b9539cecb07435adf0.jpg",
-    "static/media/testImg.jpg": "/static/media/testImg.e1ac1a79a621709d1ea1.jpg",
-    "static/media/test-post-img-pet-3.jpg": "/static/media/test-post-img-pet-3.b0bc5f7f00c557e5de73.jpg",
-    "static/media/dummy_book4.jpg": "/static/media/dummy_book4.924bc190ac539cadf122.jpg",
-    "static/media/meta_mong.jpg": "/static/media/meta_mong.2cf2f5d66fbcd209f124.jpg",
-    "static/media/dummy_book3.jpg": "/static/media/dummy_book3.6944aaa7a22c3145f786.jpg",
-    "static/media/dummy_book2.jpg": "/static/media/dummy_book2.2958dddc6b267f56c7e5.jpg",
-    "static/media/dummy_book1.jpg": "/static/media/dummy_book1.99d63562fc94723d9c13.jpg",
-    "index.html": "/index.html",
-    "main.1038eb9d.css.map": "/static/css/main.1038eb9d.css.map",
-    "main.5e17c7d9.js.map": "/static/js/main.5e17c7d9.js.map",
-    "592.012a0d9b.chunk.js.map": "/static/js/592.012a0d9b.chunk.js.map"
+    "main.css": "/Everytime-clone/static/css/main.49dd9117.css",
+    "main.js": "/Everytime-clone/static/js/main.b3b9cb52.js",
+    "static/js/592.012a0d9b.chunk.js": "/Everytime-clone/static/js/592.012a0d9b.chunk.js",
+    "static/media/AppleSDGothicNeoR.ttf": "/Everytime-clone/static/media/AppleSDGothicNeoR.d159b4d4ce2ef2592daa.ttf",
+    "static/media/side-dummy-ad-1.jpg": "/Everytime-clone/static/media/side-dummy-ad-1.8690e19973c454610161.jpg",
+    "static/media/side-dummy-ad-2.jpg": "/Everytime-clone/static/media/side-dummy-ad-2.c8d35139429950cdad71.jpg",
+    "static/media/side-dummy-ad-3.png": "/Everytime-clone/static/media/side-dummy-ad-3.8d2585f9a16bb5b1dd2f.png",
+    "static/media/dummyAdImg.png": "/Everytime-clone/static/media/dummyAdImg.15dd68c86e789a9db9a3.png",
+    "static/media/test-post-img-pet-2.jpg": "/Everytime-clone/static/media/test-post-img-pet-2.19b9539cecb07435adf0.jpg",
+    "static/media/testImg.jpg": "/Everytime-clone/static/media/testImg.e1ac1a79a621709d1ea1.jpg",
+    "static/media/test-post-img-pet-3.jpg": "/Everytime-clone/static/media/test-post-img-pet-3.b0bc5f7f00c557e5de73.jpg",
+    "static/media/dummy_book4.jpg": "/Everytime-clone/static/media/dummy_book4.924bc190ac539cadf122.jpg",
+    "static/media/meta_mong.jpg": "/Everytime-clone/static/media/meta_mong.2cf2f5d66fbcd209f124.jpg",
+    "static/media/dummy_book3.jpg": "/Everytime-clone/static/media/dummy_book3.6944aaa7a22c3145f786.jpg",
+    "static/media/dummy_book2.jpg": "/Everytime-clone/static/media/dummy_book2.2958dddc6b267f56c7e5.jpg",
+    "static/media/dummy_book1.jpg": "/Everytime-clone/static/media/dummy_book1.99d63562fc94723d9c13.jpg",
+    "index.html": "/Everytime-clone/index.html",
+    "main.49dd9117.css.map": "/Everytime-clone/static/css/main.49dd9117.css.map",
+    "main.b3b9cb52.js.map": "/Everytime-clone/static/js/main.b3b9cb52.js.map",
+    "592.012a0d9b.chunk.js.map": "/Everytime-clone/static/js/592.012a0d9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1038eb9d.css",
-    "static/js/main.5e17c7d9.js"
+    "static/css/main.49dd9117.css",
+    "static/js/main.b3b9cb52.js"
   ]
 }

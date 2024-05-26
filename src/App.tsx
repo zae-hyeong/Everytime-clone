@@ -41,8 +41,8 @@ const router = createBrowserRouter([
       { path: "/BookStore", element: <BookStore /> },
       { path: "/CampusPick", element: <CampusPick /> },
     ],
-  },
-]);
+  }
+], {basename: "/Everytime-clone",});
 
 function App() {
   return <RouterProvider router={router} />;
