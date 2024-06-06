@@ -5,32 +5,22 @@ import CommentItem from "../assets/PostAsset/CommentItem";
 import CommentInputForm from "./assets/CommentInputForm";
 import Loading from "Component/PublicAsset/Loading";
 
-export interface IPostCommentListProps {}
+export interface IPostCommentListProps {
+  comments: IComment[];
+}
 
 export default function PostCommentList(props: IPostCommentListProps) {
   const [comments, setComments] = React.useState<IComment[]>([]);
-  const [isLoading, setIsLoading] = React.useState<boolean>(true);
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    async function fetchComments() {
-      try {
-        setIsLoading(true);
-        const response = await fetch(`${SERVER_URL}/comments`);
-        const { comments } = await response.json();
-        if (response.status === 200) {
-          setIsLoading(false);
-          setComments(comments);
-        } else throw new Error("Fail to fetchComments");
-      } catch (e) {
-        alert("ERROR : " + e);
-      }
-    }
-    fetchComments();
-  }, []);
+    setComments(props.comments);
+  }, [props.comments]);
 
   function submitCommentHandler(comment: IComment) {
     async function putComment(comment: IComment) {
       try {
+        setIsLoading(true);
         const response = await fetch(`${SERVER_URL}/comment`, {
           method: "PUT",
           headers: {
@@ -40,6 +30,7 @@ export default function PostCommentList(props: IPostCommentListProps) {
         });
         if (response.status === 200) {
           setComments((comments) => [...comments, comment]);
+          setIsLoading(false);
         }
       } catch (e) {
         alert("ERROR : " + e);
@@ -60,13 +51,17 @@ export default function PostCommentList(props: IPostCommentListProps) {
         <Loading />
       ) : (
         <ul>
-          {comments.map((comment) => (
-            <CommentItem
-              comment={comment}
-              key={comment.commentId}
-              onCommentDelete={deleteCommentHandler}
-            />
-          ))}
+          {comments ? (
+            comments.map((comment) => (
+              <CommentItem
+                comment={comment}
+                key={comment.commentId}
+                onCommentDelete={deleteCommentHandler}
+              />
+            ))
+          ) : (
+            <></>
+          )}
         </ul>
       )}
       <CommentInputForm onCommentSubmit={submitCommentHandler} />
