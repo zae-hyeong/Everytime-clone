@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface INumOfCommentsProps {
-  numOfComments: number;
+  numOfComments?: number;
   className?: string;
 }
 

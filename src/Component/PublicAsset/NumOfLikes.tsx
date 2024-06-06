@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface INumOfLikesProps {
-  numOfLikes: number;
+  numOfLikes?: number;
   className?: string;
 }
 

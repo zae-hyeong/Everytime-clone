@@ -1,17 +1,17 @@
+import { Board } from "Component/pages/BulletinBoard/Board/Board";
+import BoardLayout from "Component/pages/BulletinBoard/Board/BoardLayout";
+import Post from "Component/pages/BulletinBoard/Board/Post/Post";
+import BulletinBoard from "Component/pages/BulletinBoard/BulletinBoard";
+import BulletinBoardLayout from "Component/pages/BulletinBoard/BulletinBoardLayout";
+import ErrorPage from "Component/pages/ErrorPage";
+import BookStore from "Component/pages/MenuPages/BookStore/BookStore";
+import CampusPick from "Component/pages/MenuPages/CampusPick/CampusPick";
+import Friends from "Component/pages/MenuPages/Friends/Friends";
+import GradeCalculator from "Component/pages/MenuPages/GradeCalculator/GradeCalculator";
+import Lectures from "Component/pages/MenuPages/Lectures/Lectures";
+import TimeTable from "Component/pages/MenuPages/TimeTabel/TimeTable";
+import RootLayout from "Component/pages/RootLayout";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import RootLayout from "./Component/Layout/RootLayout";
-import ErrorPage from "./Component/Layout/ErrorPage";
-import TimeTable from "./Component/Body/TimeTabel/TimeTable";
-import Lectures from "./Component/Body/Lectures/Lectures";
-import CampusPick from "./Component/Body/CampusPick/CampusPick";
-import GradeCalculator from "./Component/Body/GradeCalculator/GradeCalculator";
-import Friends from "./Component/Body/Friends/Friends";
-import BookStore from "./Component/Body/BookStore/BookStore";
-import { Board } from "./Component/Body/BulletinBoard/Board/Board";
-import BoardLayout from "./Component/Layout/BoardLayout";
-import Post from "Component/Body/BulletinBoard/Post/Post";
-import BulletinBoardLayout from "Component/Layout/BulletinBoardLayout";
-import BulletinBoard from "Component/Body/BulletinBoard/BulletinBoard";
 
 const router = createBrowserRouter([
   {
